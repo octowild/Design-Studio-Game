@@ -11,3 +11,9 @@ script = ExtResource("1_batpx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_hhmhv")
+
+[node name="PanelContainer" type="PanelContainer" parent="CharacterBody2D"]
+offset_left = -9.0
+offset_top = -11.0
+offset_right = 9.0
+offset_bottom = 13.0

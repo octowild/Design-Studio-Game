@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://bd0bx5mcd10tp"]
+[gd_scene load_steps=2 format=3 uid="uid://bd0bx5mcd10tp"]
+
+[ext_resource type="PackedScene" uid="uid://bh08kfv5t3i7g" path="res://objects/cockroach.tscn" id="1_f36bt"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="cockroach" parent="." instance=ExtResource("1_f36bt")]
+position = Vector2(-1, -1)
