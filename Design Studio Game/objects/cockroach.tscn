@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh08kfv5t3i7g"]
+
+[ext_resource type="Script" path="res://scripts/roach.gd" id="1_batpx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhmhv"]
+
+[node name="cockroach" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_batpx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_hhmhv")
