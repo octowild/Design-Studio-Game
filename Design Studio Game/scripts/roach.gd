@@ -1,21 +1,25 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+var _maxspeed = 350
+
+var _accel=20
+
 
 
 func _physics_process(delta):
 
-	var directionx = Input.get_axis("a", "d")
-	var directiony = Input.get_axis("w", "s")
+	var directionx = Input.get_axis("ui_left", "ui_right")
+	var directiony = Input.get_axis("ui_up", "ui_down")
 	
 	if directiony:
-		velocity.y=directiony*SPEED
+		velocity.y=move_toward(velocity.y,_maxspeed*directiony,_accel)
 	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, _accel)
 	if directionx:
-		velocity.x = directionx * SPEED
+		velocity.x=move_toward(velocity.x,_maxspeed*directionx,_accel)
+
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, _accel)
 
 	move_and_slide()
