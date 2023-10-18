@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://celh2dyly8ntr"]
+
+[ext_resource type="Texture2D" uid="uid://dyd3eflct85m3" path="res://assets/3.png" id="1_ct0cm"]
+[ext_resource type="Script" path="res://scripts/3droach.gd" id="1_yy8s1"]
+[ext_resource type="Texture2D" uid="uid://b5c2mcmwx613" path="res://assets/4.png" id="2_4kjxa"]
+[ext_resource type="Texture2D" uid="uid://clho78sxlg8mm" path="res://assets/5.png" id="3_g2exu"]
+[ext_resource type="Texture2D" uid="uid://bw0p0wji23pam" path="res://assets/6.png" id="4_tsgso"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_21qbq"]
+radius = 0.0864031
+height = 0.41993
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5p2y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ct0cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4kjxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g2exu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tsgso")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="3droach" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+script = ExtResource("1_yy8s1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0304269, 0.159534, 0)
+shape = SubResource("CapsuleShape3D_21qbq")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0540803, 0.159383, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_v5p2y")

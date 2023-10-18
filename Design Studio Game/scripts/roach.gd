@@ -5,7 +5,8 @@ var _maxspeed = 350
 
 var _accel=50
 
-
+func _ready():
+	get_node("AnimatedSprite2D")
 
 func _physics_process(delta):
 

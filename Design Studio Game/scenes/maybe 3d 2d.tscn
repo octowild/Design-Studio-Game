@@ -1,6 +1,16 @@
-[gd_scene format=3 uid="uid://c8kfoxgm06ju1"]
+[gd_scene load_steps=3 format=3 uid="uid://c8kfoxgm06ju1"]
+
+[ext_resource type="Texture2D" uid="uid://d26ftaakgd380" path="res://assets/7.png" id="1_ps2jr"]
+[ext_resource type="PackedScene" uid="uid://celh2dyly8ntr" path="res://objects/3droach.tscn" id="2_1xtwe"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 1.36486, 0)
+
+[node name="3droach" parent="." instance=ExtResource("2_1xtwe")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_ps2jr")
