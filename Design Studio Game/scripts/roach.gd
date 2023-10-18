@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var _maxspeed = 350
 
-var _accel=20
+var _accel=50
 
 
 

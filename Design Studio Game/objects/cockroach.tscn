@@ -1,7 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh08kfv5t3i7g"]
+[gd_scene load_steps=8 format=3 uid="uid://bh08kfv5t3i7g"]
 
 [ext_resource type="Script" path="res://scripts/roach.gd" id="1_batpx"]
+[ext_resource type="Texture2D" uid="uid://dyd3eflct85m3" path="res://assets/3.png" id="2_tcern"]
 [ext_resource type="Texture2D" uid="uid://clho78sxlg8mm" path="res://assets/5.png" id="2_v8d8q"]
+[ext_resource type="Texture2D" uid="uid://b5c2mcmwx613" path="res://assets/4.png" id="3_cnpea"]
+[ext_resource type="Texture2D" uid="uid://bw0p0wji23pam" path="res://assets/6.png" id="5_uqsmc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjr5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tcern")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cnpea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v8d8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uqsmc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhmhv"]
 radius = 8.0
@@ -12,11 +35,18 @@ height = 36.0
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_batpx")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hjr5b")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 4)
+position = Vector2(0, 24)
+scale = Vector2(4, 4)
 shape = SubResource("CapsuleShape2D_hhmhv")
 
 [node name="5" type="Sprite2D" parent="CharacterBody2D"]
+visible = false
 texture_filter = 1
 position = Vector2(-1, -2)
+scale = Vector2(4, 4)
 texture = ExtResource("2_v8d8q")
