@@ -27,8 +27,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhmhv"]
-radius = 8.0
-height = 36.0
+radius = 7.75
+height = 40.0
 
 [node name="cockroach" type="Node2D"]
 
@@ -36,17 +36,12 @@ height = 36.0
 script = ExtResource("1_batpx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+z_index = 1
 texture_filter = 1
+position = Vector2(-4, -10)
 sprite_frames = SubResource("SpriteFrames_hjr5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 24)
-scale = Vector2(4, 4)
+position = Vector2(5, -11)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_hhmhv")
-
-[node name="5" type="Sprite2D" parent="CharacterBody2D"]
-visible = false
-texture_filter = 1
-position = Vector2(-1, -2)
-scale = Vector2(4, 4)
-texture = ExtResource("2_v8d8q")

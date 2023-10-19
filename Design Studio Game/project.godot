@@ -14,3 +14,7 @@ config/name="Design Studio Game"
 run/main_scene="res://objects/cockroach.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

@@ -42,5 +42,6 @@ shape = SubResource("CapsuleShape3D_21qbq")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0540803, 0.159383, 0)
+sorting_offset = 1.0
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_v5p2y")

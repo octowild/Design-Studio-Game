@@ -10,15 +10,15 @@ func _ready():
 
 func _physics_process(delta):
 
-	var directionx = Input.get_axis("ui_left", "ui_right")
-	var directiony = Input.get_axis("ui_up", "ui_down")
+	var direction = vector2( Input.get_action_strength("right")-Input.get_action_strength("left"),Input.get_action_strength("down")-Input.get_action_strength("up"))
+ 
 	
-	if directiony:
-		velocity.y=move_toward(velocity.y,_maxspeed*directiony,_accel)
+	if direction:
+		velocity.y=move_toward(velocity.y,_maxspeed*direction.y,_accel)
 	else:
 		velocity.y = move_toward(velocity.y, 0, _accel)
-	if directionx:
-		velocity.x=move_toward(velocity.x,_maxspeed*directionx,_accel)
+	if direction:
+		velocity.x=move_toward(velocity.x,_maxspeed*direction.x,_accel)
 
 	else:
 		velocity.x = move_toward(velocity.x, 0, _accel)
