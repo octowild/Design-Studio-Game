@@ -5,12 +5,13 @@
 
 [node name="Node3D" type="Node3D"]
 
-[node name="3droach" parent="." instance=ExtResource("2_1xtwe")]
-
-[node name="Camera3D" type="Camera3D" parent="3droach"]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 1.36486, 0)
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 texture_filter = 0
 texture = ExtResource("1_ps2jr")
+
+[node name="3droach" parent="." instance=ExtResource("2_1xtwe")]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.0125076, 0, -0.00753498)
+
+[node name="Camera3D" type="Camera3D" parent="3droach"]
+transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0.0125076, 0.878236, 1.20857)

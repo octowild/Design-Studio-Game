@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd0bx5mcd10tp"]
 
-[ext_resource type="PackedScene" uid="uid://bh08kfv5t3i7g" path="res://objects/cockroach.tscn" id="1_f36bt"]
+[ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="2_8dwtk"]
 [ext_resource type="Texture2D" uid="uid://d26ftaakgd380" path="res://assets/7.png" id="2_n4u5y"]
 
 [node name="Node2D" type="Node2D"]
@@ -10,9 +10,8 @@ texture_filter = 1
 position = Vector2(4, 0)
 texture = ExtResource("2_n4u5y")
 
-[node name="cockroach" parent="." instance=ExtResource("1_f36bt")]
-position = Vector2(-1, -1)
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_8dwtk")]
+position = Vector2(-2, 6)
 
-[node name="Camera2D" type="Camera2D" parent="cockroach"]
-position = Vector2(1, 1)
-zoom = Vector2(4, 4)
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(2, -6)

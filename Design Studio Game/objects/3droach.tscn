@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://clho78sxlg8mm" path="res://assets/5.png" id="3_g2exu"]
 [ext_resource type="Texture2D" uid="uid://bw0p0wji23pam" path="res://assets/6.png" id="4_tsgso"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_21qbq"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gl8mx"]
 radius = 0.0864031
 height = 0.41993
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v5p2y"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yapnr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -30,18 +30,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="3droach" type="Node3D"]
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="3droach" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
 script = ExtResource("1_yy8s1")
+_maxspeed = 5.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0304269, 0.159534, 0)
-shape = SubResource("CapsuleShape3D_21qbq")
+shape = SubResource("CapsuleShape3D_gl8mx")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0540803, 0.159383, 0)
 sorting_offset = 1.0
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_v5p2y")
+sprite_frames = SubResource("SpriteFrames_yapnr")
