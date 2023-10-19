@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct37i7lcuusvx"]
+[gd_scene load_steps=10 format=3 uid="uid://ct37i7lcuusvx"]
 
 [ext_resource type="Script" path="res://scripts/roach.gd" id="1_gdd2i"]
 [ext_resource type="Texture2D" uid="uid://dyd3eflct85m3" path="res://assets/3.png" id="2_em3w7"]
@@ -13,22 +13,42 @@ animations = [{
 "texture": ExtResource("2_em3w7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4cft5")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4_3ggad")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_ict2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4cft5")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcp76"]
 radius = 7.75
 height = 40.0
+
+[sub_resource type="Animation" id="Animation_ktrq6"]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0d4xm"]
+_data = {
+"left": SubResource("Animation_ktrq6")
+}
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_gdd2i")
@@ -36,10 +56,17 @@ script = ExtResource("1_gdd2i")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(-4, -10)
 sprite_frames = SubResource("SpriteFrames_cdwkt")
+frame_progress = 0.497395
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, -11)
+position = Vector2(8, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tcp76")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0d4xm")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
