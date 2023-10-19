@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8kfoxgm06ju1"]
+[gd_scene load_steps=4 format=3 uid="uid://c8kfoxgm06ju1"]
 
 [ext_resource type="Texture2D" uid="uid://d26ftaakgd380" path="res://assets/7.png" id="1_ps2jr"]
 [ext_resource type="PackedScene" uid="uid://celh2dyly8ntr" path="res://objects/3droach.tscn" id="2_1xtwe"]
+[ext_resource type="PackedScene" uid="uid://b2cj6up52cwej" path="res://objects/3d/toilet_props.tscn" id="3_uu7qb"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -14,4 +15,10 @@ texture = ExtResource("1_ps2jr")
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.0125076, 0, -0.00753498)
 
 [node name="Camera3D" type="Camera3D" parent="3droach"]
-transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0.0125076, 0.878236, 1.20857)
+transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0.0125076, 2.32096, 2.04153)
+
+[node name="toilet" parent="." instance=ExtResource("3_uu7qb")]
+transform = Transform3D(5.70434e-07, 0, -4.35, 0, 4.35, 0, 4.35, 0, 5.70434e-07, -4.97609, 1.19209e-07, 5.98798)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.258819, 0.482963, -0.836516, 0, 0.866025, 0.5, 0.965926, 0.12941, -0.224144, -0.00556898, 5, -0.223396)

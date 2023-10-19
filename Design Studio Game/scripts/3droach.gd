@@ -13,9 +13,9 @@ func _physics_process(delta):
  
 	
 	if direction:
-		velocity.y= move_toward(velocity.y,_maxspeed*direction.y,_accel)
+		velocity.z= move_toward(velocity.z,_maxspeed*direction.y,_accel)
 	else:
-		velocity.y = move_toward(velocity.y, 0, _accel)
+		velocity.z = move_toward(velocity.z, 0, _accel)
 	if direction:
 		velocity.x=move_toward(velocity.x,_maxspeed*direction.x,_accel)
 
