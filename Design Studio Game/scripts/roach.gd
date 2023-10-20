@@ -4,7 +4,8 @@ extends CharacterBody2D
 @export var _maxspeed:int = 350
 @export var _accel:int=50
 
-@export var _spritedir:Vector2=Vector2(0,-1)
+var _spritedir:Vector2=Vector2(0,-1)
+var _intightspace:bool=false
 
 @onready var _anim=$AnimationTree
 
@@ -17,7 +18,9 @@ func _physics_process(delta):
 		Input.get_action_strength("right")-Input.get_action_strength("left"),
 		Input.get_action_strength("down")-Input.get_action_strength("up")
 		)
-	_updateanim(direction)
+		
+	if(!_intightspace):
+		_updateanim(direction)
 	
 	if direction:
 		velocity.y= move_toward(velocity.y,_maxspeed*direction.y,_accel)
@@ -29,6 +32,14 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, _accel)
 
 	move_and_slide()
+	
 func _updateanim(dir:Vector2):
 	if(dir!=Vector2.ZERO):
 		_anim.set("parameters/idle/blend_position",dir)
+
+func _on_area_2d_body_entered(body):
+	_intightspace=true
+
+
+func _on_area_2d_body_exited(body):
+	_intightspace=false
