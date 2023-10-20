@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://celh2dyly8ntr"]
+[gd_scene load_steps=6 format=3 uid="uid://celh2dyly8ntr"]
 
-[ext_resource type="Texture2D" uid="uid://dyd3eflct85m3" path="res://assets/3.png" id="1_ct0cm"]
 [ext_resource type="Script" path="res://scripts/3droach.gd" id="1_yy8s1"]
+[ext_resource type="Texture2D" uid="uid://bw0p0wji23pam" path="res://assets/6.png" id="2_4ulea"]
+[ext_resource type="Texture2D" uid="uid://duhhase8vnrpr" path="res://assets/roach_n.png" id="3_0yux7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rhedp"]
 radius = 0.1
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_1qjyn"]
-diffuse_texture = ExtResource("1_ct0cm")
+[sub_resource type="CanvasTexture" id="CanvasTexture_fru5r"]
+diffuse_texture = ExtResource("2_4ulea")
+normal_texture = ExtResource("3_0yux7")
 texture_filter = 1
 
 [node name="3droach" type="CharacterBody3D"]
@@ -20,5 +22,6 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0089
 shape = SubResource("SphereShape3D_rhedp")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+alpha_cut = 1
 texture_filter = 0
-texture = SubResource("CanvasTexture_1qjyn")
+texture = SubResource("CanvasTexture_fru5r")

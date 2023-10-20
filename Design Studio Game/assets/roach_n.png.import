@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw0p0wji23pam"
-path.s3tc="res://.godot/imported/6.png-f9d63503950ce758a4468d886d9cbedc.s3tc.ctex"
+uid="uid://duhhase8vnrpr"
+path.s3tc="res://.godot/imported/roach_n.png-96873b37f86ed98e96b61bdb3a087e33.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/6.png"
-dest_files=["res://.godot/imported/6.png-f9d63503950ce758a4468d886d9cbedc.s3tc.ctex"]
+source_file="res://assets/roach_n.png"
+dest_files=["res://.godot/imported/roach_n.png-96873b37f86ed98e96b61bdb3a087e33.s3tc.ctex"]
 
 [params]
 
