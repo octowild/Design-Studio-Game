@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bh08kfv5t3i7g"]
 
 [ext_resource type="Script" path="res://scripts/roach.gd" id="1_batpx"]
-[ext_resource type="Texture2D" uid="uid://dyd3eflct85m3" path="res://assets/3.png" id="2_tcern"]
-[ext_resource type="Texture2D" uid="uid://clho78sxlg8mm" path="res://assets/5.png" id="2_v8d8q"]
-[ext_resource type="Texture2D" uid="uid://b5c2mcmwx613" path="res://assets/4.png" id="3_cnpea"]
-[ext_resource type="Texture2D" uid="uid://bw0p0wji23pam" path="res://assets/6.png" id="5_uqsmc"]
+[ext_resource type="Texture2D" uid="uid://dyd3eflct85m3" path="res://assets/sprites/3.png" id="2_tcern"]
+[ext_resource type="Texture2D" uid="uid://clho78sxlg8mm" path="res://assets/sprites/5.png" id="2_v8d8q"]
+[ext_resource type="Texture2D" uid="uid://b5c2mcmwx613" path="res://assets/sprites/4.png" id="3_cnpea"]
+[ext_resource type="Texture2D" uid="uid://bw0p0wji23pam" path="res://assets/sprites/6.png" id="5_uqsmc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hjr5b"]
 animations = [{

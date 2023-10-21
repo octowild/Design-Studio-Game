@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://ct37i7lcuusvx"]
 
 [ext_resource type="Script" path="res://scripts/roach.gd" id="1_gdd2i"]
-[ext_resource type="Texture2D" uid="uid://bymr8proqk7td" path="res://assets/roach.png" id="2_dfx04"]
+[ext_resource type="Texture2D" uid="uid://bymr8proqk7td" path="res://assets/sprites/roach.png" id="2_bebxr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w23o1"]
 radius = 10.4403
@@ -136,7 +136,7 @@ script = ExtResource("1_gdd2i")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 texture_filter = 1
-texture = ExtResource("2_dfx04")
+texture = ExtResource("2_bebxr")
 hframes = 4
 frame = 3
 

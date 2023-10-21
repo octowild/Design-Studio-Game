@@ -1,15 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8kfoxgm06ju1"]
+[gd_scene load_steps=7 format=3 uid="uid://c8kfoxgm06ju1"]
 
-[ext_resource type="Texture2D" uid="uid://d26ftaakgd380" path="res://assets/7.png" id="1_ps2jr"]
 [ext_resource type="PackedScene" uid="uid://celh2dyly8ntr" path="res://objects/3droach.tscn" id="2_1xtwe"]
+[ext_resource type="Texture2D" uid="uid://d26ftaakgd380" path="res://assets/tiles/7.png" id="2_ks7xr"]
+[ext_resource type="Texture2D" uid="uid://camq7pfadlox5" path="res://icon.svg" id="3_cepw4"]
 [ext_resource type="PackedScene" uid="uid://b2cj6up52cwej" path="res://objects/3d/toilet_props.tscn" id="3_uu7qb"]
+[ext_resource type="Shader" uid="uid://8r0184r1c3na" path="res://shaders/3dpixelationshader.tres" id="4_bo6at"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wpr4"]
+shader = ExtResource("4_bo6at")
+shader_parameter/pixelation = 0.0
 
 [node name="Node3D" type="Node3D"]
+
+[node name="toilet" parent="." instance=ExtResource("3_uu7qb")]
+transform = Transform3D(5.70434e-07, 0, -4.35, 0, 4.35, 0, 4.35, 0, 5.70434e-07, -4.97609, 1.19209e-07, 5.98798)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 texture_filter = 0
-texture = ExtResource("1_ps2jr")
+texture = ExtResource("2_ks7xr")
 
 [node name="3droach" parent="." instance=ExtResource("2_1xtwe")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.0125076, 0, -0.00753498)
@@ -17,8 +26,12 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.0125076
 [node name="Camera3D" type="Camera3D" parent="3droach"]
 transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0.0125076, 2.32096, 2.04153)
 
-[node name="toilet" parent="." instance=ExtResource("3_uu7qb")]
-transform = Transform3D(5.70434e-07, 0, -4.35, 0, 4.35, 0, 4.35, 0, 5.70434e-07, -4.97609, 1.19209e-07, 5.98798)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.258819, 0.482963, -0.836516, 0, 0.866025, 0.5, 0.965926, 0.12941, -0.224144, -0.00556898, 5, -0.223396)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_3wpr4")
+scale = Vector2(15.0078, 8.4375)
+texture = ExtResource("3_cepw4")
+centered = false

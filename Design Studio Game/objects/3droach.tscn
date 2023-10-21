@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://celh2dyly8ntr"]
 
 [ext_resource type="Script" path="res://scripts/3droach.gd" id="1_yy8s1"]
+[ext_resource type="Texture2D" uid="uid://dyd3eflct85m3" path="res://assets/sprites/3.png" id="2_w4knj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rhedp"]
 radius = 0.1
-
-[sub_resource type="ImageTexture" id="ImageTexture_mu37y"]
 
 [node name="3droach" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
@@ -17,6 +16,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0089
 shape = SubResource("SphereShape3D_rhedp")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0572629, 0.155509, 0.011517)
 alpha_cut = 1
 texture_filter = 0
-texture = SubResource("ImageTexture_mu37y")
+texture = ExtResource("2_w4knj")
