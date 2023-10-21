@@ -46,15 +46,11 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_cy4w7"]
-resource_name = "up"
-loop_mode = 1
-
 [sub_resource type="Animation" id="Animation_x7pvl"]
 resource_name = "right_move"
-length = 0.916675
+length = 0.366668
 loop_mode = 1
-step = 0.0833333
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,11 +58,15 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
+
+[sub_resource type="Animation" id="Animation_cy4w7"]
+resource_name = "up"
+loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0d4xm"]
 _data = {
@@ -88,10 +88,8 @@ animation = &"right_move"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8p8u"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wg8ee"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_aliua"]
 states/right/node = SubResource("AnimationNodeAnimation_tnrl4")

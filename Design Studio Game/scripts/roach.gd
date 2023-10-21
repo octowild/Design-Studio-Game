@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var _maxspeed:int = 350
+@export var _maxspeed:int = 200
 @export var _accel:int=50
 
 var _spritedir:Vector2=Vector2(0,-1)
@@ -42,9 +42,9 @@ func _updateanim(dir:Vector2):
 		_anim.set("parameters/idle/blend_position",dir)
 func _changestate():
 	if(velocity!=Vector2.ZERO):
-		_statemachine.travel("right")
-	else:
 		_statemachine.travel("right_move")
+	else:
+		_statemachine.travel("right")
 
 func _on_area_2d_body_entered(body):
 	_intightspace=true
