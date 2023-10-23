@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var _maxspeed:int = 150
 @export var _accel:int=50
 
-var direction=Vector2()
+
 var _spritedir:Vector2=Vector2(0,-1)
 var _intightspace:bool=false
 
@@ -17,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 
-	direction = Vector2(
+	var direction = Vector2(
 		Input.get_action_strength("right")-Input.get_action_strength("left"),
 		Input.get_action_strength("down")-Input.get_action_strength("up")
 		)
@@ -36,16 +36,7 @@ func _physics_process(delta):
 	move_and_slide()
 	_changestate()
 
-func _process(delta):
-	var fps=Engine.get_frames_per_second()
-	var lerp_interval=direction/fps
-	var lerp_pos=global_transform.origin + lerp_interval
-	if fps>60:
-		_sprite.set_as_toplevel(true)
-		_sprite.global_transform.origin.linear_interpolate(lerp_interval,20*delta)
-	else:
-		_sprite.global_transform=global_transform
-		_sprite.set_as_toplevel(false)
+
 
 
 
