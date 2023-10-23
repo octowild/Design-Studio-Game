@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bd0bx5mcd10tp"]
+[gd_scene load_steps=16 format=3 uid="uid://bd0bx5mcd10tp"]
 
 [ext_resource type="Texture2D" uid="uid://v6gw30p5sltp" path="res://assets/tiles/tiles.png" id="2_2o3er"]
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="2_8dwtk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5bj6rsrpeqvc" path="res://assets/tiles/pipes_x1_upper.png" id="4_o2o8h"]
 [ext_resource type="Texture2D" uid="uid://bno6vgo3l6ver" path="res://assets/tiles/pipe_variable_upper.png" id="6_srfu4"]
 [ext_resource type="Texture2D" uid="uid://bempdskm0yw4j" path="res://assets/tiles/pipe_variable.png" id="7_nire5"]
+[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="8_y2hip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdgkj"]
 texture = ExtResource("2_2o3er")
@@ -1955,3 +1956,6 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 6)
 position_smoothing_enabled = true
+script = ExtResource("8_y2hip")
+_maxspeed = null
+_accel = null
