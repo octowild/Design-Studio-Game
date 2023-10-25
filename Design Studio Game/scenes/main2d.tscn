@@ -1957,5 +1957,3 @@ metadata/_edit_lock_ = true
 position = Vector2(-2, 6)
 position_smoothing_enabled = true
 script = ExtResource("8_y2hip")
-_maxspeed = null
-_accel = null
