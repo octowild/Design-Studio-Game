@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="1_fc02e"]
-[ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
+[ext_resource type="Material" uid="uid://c1t545yhofo6l" path="res://shaders/noiseshader.tres" id="1_w0mji"]
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="2_nf544"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_riflt"]
 [ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_lb1be"]
