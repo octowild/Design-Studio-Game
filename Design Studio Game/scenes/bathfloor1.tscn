@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://ckpvkplrxhcc0"]
+[gd_scene load_steps=19 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="1_fc02e"]
-[ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
+[ext_resource type="Material" uid="uid://c1t545yhofo6l" path="res://shaders/noiseshader.tres" id="1_w0mji"]
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="2_nf544"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_riflt"]
 [ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_lb1be"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ceytmp6xooow2" path="res://objects/frame0006.jpg" id="9_h0und"]
 [ext_resource type="Texture2D" uid="uid://byd8bkiartw3e" path="res://objects/frame0007.jpg" id="10_r8kqw"]
 [ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_q45cs"]
+[ext_resource type="Script" path="res://scripts/exit_scene.gd" id="14_35rnw"]
 [ext_resource type="AudioStream" uid="uid://cqf2sgin7sh0c" path="res://objects/No_Return_trimmed.mp3" id="14_ro0of"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3dtr2"]
@@ -113,6 +114,9 @@ layer_2/z_index = 5
 layer_2/tile_data = PackedInt32Array(1, 327681, 4, 2, 393217, 4, 3, 458753, 4)
 
 [node name="Area2D" type="Area2D" parent="TileMap"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("14_35rnw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
 position = Vector2(157.5, -34.5)
@@ -131,3 +135,5 @@ texture_scale = 4.6
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_ro0of")
 autoplay = true
+
+[connection signal="area_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_entered"]

@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="1_l0ia6"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_4ctjp"]
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="2_78ede"]
-[ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="2_lwbne"]
+[ext_resource type="Material" uid="uid://c1t545yhofo6l" path="res://shaders/noiseshader.tres" id="2_lwbne"]
 [ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_3jxgq"]
 [ext_resource type="Texture2D" uid="uid://cdkgsisne1376" path="res://objects/frame0001.jpg" id="4_5vkj3"]
 [ext_resource type="Texture2D" uid="uid://cre7v5k216cet" path="res://objects/frame0002.jpg" id="5_p0lv7"]
