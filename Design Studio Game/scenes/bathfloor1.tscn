@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ckpvkplrxhcc0"]
+[gd_scene load_steps=18 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="1_fc02e"]
 [ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
@@ -52,6 +52,9 @@ animations = [{
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dntgv"]
 polygon = PackedVector2Array(-15, -4, -16, 4, -13, 5, -9, 4, -5, 6, 3, 7, 8, 8, 16, 7, 23, 4, 24, 1, 17, -3, 7, -7, 1, -8, -8, -8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dqpc"]
+size = Vector2(43, 39)
 
 [node name="Node2D" type="Node2D"]
 
@@ -108,6 +111,12 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 5
 layer_2/tile_data = PackedInt32Array(1, 327681, 4, 2, 393217, 4, 3, 458753, 4)
+
+[node name="Area2D" type="Area2D" parent="TileMap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2(157.5, -34.5)
+shape = SubResource("RectangleShape2D_5dqpc")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
