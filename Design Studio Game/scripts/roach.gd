@@ -12,7 +12,7 @@ var _intightspace:bool=false
 @onready var _anim=$AnimationTree
 @onready var _statemachine=_anim.get("parameters/playback")
 @onready var _collider=$CollisionShape2D2
-@onready var _animtrig=$Area2D/CollisionShape2D2
+@onready var _trigcol=$Area2D/CollisionShape2D2
 
 func _ready():
 	_updateanim(_spritedir)
@@ -37,13 +37,13 @@ func _physics_process(delta):
 	
 	if (abs(velocity.x)<abs(velocity.y)):
 		_collider.set_rotation_degrees(0)
-		_animtrig.set_rotation_degrees(0)
+		_trigcol.set_rotation_degrees(0)
 	elif(abs(velocity.x)>abs(velocity.y)):
 		_collider.set_rotation_degrees(90)
-		_animtrig.set_rotation_degrees(90)
+		_trigcol.set_rotation_degrees(90)
 	elif(velocity.x!=0&&abs(velocity.x)==abs(velocity.y)):
 		_collider.set_rotation_degrees(90)
-		_animtrig.set_rotation_degrees(90)
+		_trigcol.set_rotation_degrees(90)
 	print(_collider.get_rotation())
 		
 	
