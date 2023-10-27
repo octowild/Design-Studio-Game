@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://ct37i7lcuusvx"]
+[gd_scene load_steps=29 format=3 uid="uid://ct37i7lcuusvx"]
 
 [ext_resource type="Script" path="res://scripts/roach.gd" id="1_gdd2i"]
 [ext_resource type="Texture2D" uid="uid://dg6b3yx5yfj8k" path="res://assets/sprites/run.png" id="2_lxeix"]
+[ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="3_71a3u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_krb7m"]
 radius = 11.0
@@ -250,6 +251,7 @@ hframes = 12
 vframes = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+material = ExtResource("3_71a3u")
 position = Vector2(3, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_krb7m")
@@ -270,6 +272,13 @@ parameters/run/blend_position = Vector2(-0.00480002, -0.00480342)
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+material = ExtResource("3_71a3u")
+position = Vector2(3, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_krb7m")
+one_way_collision_margin = 0.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

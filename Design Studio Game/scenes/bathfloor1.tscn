@@ -1,81 +1,82 @@
-[gd_scene load_steps=17 format=3 uid="uid://ckpvkplrxhcc0"]
+[gd_scene load_steps=16 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="1_fc02e"]
+[ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="2_nf544"]
-[ext_resource type="Shader" path="res://shaders/trialshader.gdshader" id="2_r2jy8"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_riflt"]
+[ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_lb1be"]
+[ext_resource type="Texture2D" uid="uid://cdkgsisne1376" path="res://objects/frame0001.jpg" id="4_eh82c"]
+[ext_resource type="Texture2D" uid="uid://cre7v5k216cet" path="res://objects/frame0002.jpg" id="5_vp3n0"]
+[ext_resource type="Texture2D" uid="uid://5dcurikksmfa" path="res://objects/frame0003.jpg" id="6_ylgsd"]
+[ext_resource type="Texture2D" uid="uid://hwg6ld1fgou3" path="res://objects/frame0004.jpg" id="7_i4we1"]
+[ext_resource type="Texture2D" uid="uid://crlb8tujh8xjt" path="res://objects/frame0005.jpg" id="8_0s8yy"]
+[ext_resource type="Texture2D" uid="uid://ceytmp6xooow2" path="res://objects/frame0006.jpg" id="9_h0und"]
+[ext_resource type="Texture2D" uid="uid://byd8bkiartw3e" path="res://objects/frame0007.jpg" id="10_r8kqw"]
+[ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_q45cs"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_f6pyt"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g0evk"]
-width = 200
-height = 200
-noise = SubResource("FastNoiseLite_f6pyt")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7mx3"]
-shader = ExtResource("2_r2jy8")
-shader_parameter/noise = SubResource("NoiseTexture2D_g0evk")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_yo7ui"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_euugs"]
-width = 50
-height = 50
-noise = SubResource("FastNoiseLite_yo7ui")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvg1p"]
-shader = ExtResource("2_r2jy8")
-shader_parameter/noise = SubResource("NoiseTexture2D_euugs")
+[sub_resource type="SpriteFrames" id="SpriteFrames_3dtr2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lb1be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eh82c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vp3n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ylgsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i4we1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0s8yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h0und")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r8kqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q45cs")
+}],
+"loop": true,
+"name": &"graining",
+"speed": 30.0
+}]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dntgv"]
 polygon = PackedVector2Array(-15, -4, -16, 4, -13, 5, -9, 4, -5, 6, 3, 7, 8, 8, 16, 7, 23, 4, 24, 1, 17, -3, 7, -7, 1, -8, -8, -8)
 
-[sub_resource type="Gradient" id="Gradient_p5vk7"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1skuv"]
-gradient = SubResource("Gradient_p5vk7")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_nfc1j"]
-noise_type = 0
-seed = 50
-frequency = 0.4965
-fractal_octaves = 6
-fractal_lacunarity = 30.0
-fractal_weighted_strength = 0.9
-domain_warp_enabled = true
-domain_warp_type = 2
-domain_warp_fractal_octaves = 6
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ecxci"]
-width = 300
-height = 300
-invert = true
-seamless = true
-seamless_blend_skirt = 1.0
-noise = SubResource("FastNoiseLite_nfc1j")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q1e2h"]
-shader = ExtResource("2_r2jy8")
-shader_parameter/noise = SubResource("NoiseTexture2D_ecxci")
-shader_parameter/Texture = SubResource("GradientTexture2D_1skuv")
-
 [node name="Node2D" type="Node2D"]
 
 [node name="WhiteMCRoach" parent="." instance=ExtResource("1_fc02e")]
-material = SubResource("ShaderMaterial_x7mx3")
+position = Vector2(-17, 4)
 
 [node name="Camera2D" type="Camera2D" parent="WhiteMCRoach"]
+z_index = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WhiteMCRoach/Camera2D"]
+texture_repeat = 2
+material = ExtResource("1_w0mji")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3dtr2")
+animation = &"graining"
+autoplay = "graining"
+frame_progress = 0.55082
 
 [node name="PointLight2D" type="PointLight2D" parent="WhiteMCRoach"]
-material = SubResource("ShaderMaterial_uvg1p")
 position = Vector2(-2, 0)
 scale = Vector2(1.13333, 1.13333)
-color = Color(0.898039, 0.878431, 0.764706, 1)
-energy = 0.55
+color = Color(0.545098, 0.513726, 0.337255, 1)
+energy = 0.4
 range_z_max = 0
 shadow_enabled = true
-shadow_color = Color(0.027451, 0.00392157, 0.0431373, 0.584314)
+shadow_color = Color(0.0117647, 0.0117647, 0.0470588, 0.862745)
 shadow_filter = 2
 texture = ExtResource("2_riflt")
 
@@ -85,7 +86,7 @@ occluder_light_mask = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_q1e2h")
+position = Vector2(-16, 5)
 tile_set = ExtResource("2_nf544")
 cell_quadrant_size = 32
 format = 2
@@ -107,10 +108,12 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 5
 layer_2/tile_data = PackedInt32Array(1, 327681, 4, 2, 393217, 4, 3, 458753, 4)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
-skew = 0.0959931
-color = Color(0.929412, 0.913725, 0.913725, 1)
+energy = 1.17
 blend_mode = 2
 shadow_enabled = true
-shadow_color = Color(0.0352941, 0.0666667, 0.14902, 0.203922)
+shadow_color = Color(0.0941176, 0.0980392, 0.133333, 0.65098)
+shadow_filter = 2
+texture = ExtResource("2_riflt")
+texture_scale = 4.6
