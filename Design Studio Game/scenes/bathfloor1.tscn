@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckpvkplrxhcc0"]
+[gd_scene load_steps=17 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="1_fc02e"]
 [ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ceytmp6xooow2" path="res://objects/frame0006.jpg" id="9_h0und"]
 [ext_resource type="Texture2D" uid="uid://byd8bkiartw3e" path="res://objects/frame0007.jpg" id="10_r8kqw"]
 [ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_q45cs"]
+[ext_resource type="AudioStream" uid="uid://cqf2sgin7sh0c" path="res://objects/No_Return_trimmed.mp3" id="14_ro0of"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3dtr2"]
 animations = [{
@@ -117,3 +118,7 @@ shadow_color = Color(0.0941176, 0.0980392, 0.133333, 0.65098)
 shadow_filter = 2
 texture = ExtResource("2_riflt")
 texture_scale = 4.6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ro0of")
+autoplay = true
