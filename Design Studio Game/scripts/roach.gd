@@ -44,8 +44,7 @@ func _physics_process(delta):
 	elif(velocity.x!=0&&abs(velocity.x)==abs(velocity.y)):
 		_collider.set_rotation_degrees(90)
 		_trigcol.set_rotation_degrees(90)
-	print(_collider.get_rotation())
-		
+
 	
 	move_and_slide()
 	_changestate()
@@ -66,5 +65,6 @@ func _changestate():
 
 func _on_area_2d_body_entered(body):
 	_intightspace=true
+	print(body.get_name())
 func _on_area_2d_body_exited(body):
 	_intightspace=false
