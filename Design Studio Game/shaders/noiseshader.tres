@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bv52e1acee54u"]
+
+[ext_resource type="Shader" path="res://shaders/trialshader.gdshader" id="1_cfinc"]
+
+[sub_resource type="Gradient" id="Gradient_lcn1a"]
+colors = PackedColorArray(0.635294, 0.509804, 0.411765, 0, 0.124714, 0.107947, 0.213714, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3voxi"]
+gradient = SubResource("Gradient_lcn1a")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nfc1j"]
+noise_type = 0
+seed = 50
+frequency = 0.4965
+fractal_octaves = 6
+fractal_lacunarity = 30.0
+fractal_weighted_strength = 0.9
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_fractal_octaves = 6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ecxci"]
+width = 300
+height = 300
+invert = true
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_nfc1j")
+
+[resource]
+shader = ExtResource("1_cfinc")
+shader_parameter/tinting = 0.0
+shader_parameter/noise = SubResource("NoiseTexture2D_ecxci")
+shader_parameter/Texture = SubResource("GradientTexture2D_3voxi")

@@ -11,6 +11,8 @@ var _intightspace:bool=false
 @onready var _sprite=$Sprite2D
 @onready var _anim=$AnimationTree
 @onready var _statemachine=_anim.get("parameters/playback")
+@onready var _collider=$CollisionShape2D2
+@onready var _trigcol=$Area2D/CollisionShape2D2
 
 func _ready():
 	_updateanim(_spritedir)
@@ -33,6 +35,17 @@ func _physics_process(delta):
 	if(!_intightspace):
 		_updateanim(direction)
 	
+	if (abs(velocity.x)<abs(velocity.y)):
+		_collider.set_rotation_degrees(0)
+		_trigcol.set_rotation_degrees(0)
+	elif(abs(velocity.x)>abs(velocity.y)):
+		_collider.set_rotation_degrees(90)
+		_trigcol.set_rotation_degrees(90)
+	elif(velocity.x!=0&&abs(velocity.x)==abs(velocity.y)):
+		_collider.set_rotation_degrees(90)
+		_trigcol.set_rotation_degrees(90)
+
+	
 	move_and_slide()
 	_changestate()
 
@@ -52,5 +65,6 @@ func _changestate():
 
 func _on_area_2d_body_entered(body):
 	_intightspace=true
+	print(body.get_name())
 func _on_area_2d_body_exited(body):
 	_intightspace=false
