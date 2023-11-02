@@ -2,33 +2,25 @@
 
 [ext_resource type="Shader" path="res://shaders/trialshader.gdshader" id="1_cfinc"]
 
-[sub_resource type="Gradient" id="Gradient_lcn1a"]
-colors = PackedColorArray(0.635294, 0.509804, 0.411765, 0, 0.124714, 0.107947, 0.213714, 1)
+[sub_resource type="Gradient" id="Gradient_k8d5w"]
+offsets = PackedFloat32Array(0.00813008, 1)
+colors = PackedColorArray(0.646273, 0.129899, 0.252524, 1, 0.344529, 0.1366, 0.195016, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3voxi"]
-gradient = SubResource("Gradient_lcn1a")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lkaj3"]
+gradient = SubResource("Gradient_k8d5w")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_nfc1j"]
-noise_type = 0
-seed = 50
-frequency = 0.4965
-fractal_octaves = 6
-fractal_lacunarity = 30.0
-fractal_weighted_strength = 0.9
-domain_warp_enabled = true
-domain_warp_type = 2
-domain_warp_fractal_octaves = 6
+[sub_resource type="Gradient" id="Gradient_oxg28"]
+offsets = PackedFloat32Array(0, 0.243902, 0.98374)
+colors = PackedColorArray(0, 0, 0, 1, 0.103744, 0.103744, 0.103744, 1, 0.277528, 0.277528, 0.277528, 1)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ecxci"]
-width = 300
-height = 300
-invert = true
-seamless = true
-seamless_blend_skirt = 1.0
-noise = SubResource("FastNoiseLite_nfc1j")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_03glv"]
+gradient = SubResource("Gradient_oxg28")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [resource]
 shader = ExtResource("1_cfinc")
-shader_parameter/tinting = 0.0
-shader_parameter/noise = SubResource("NoiseTexture2D_ecxci")
-shader_parameter/Texture = SubResource("GradientTexture2D_3voxi")
+shader_parameter/noise_gradient = SubResource("GradientTexture2D_03glv")
+shader_parameter/color = SubResource("GradientTexture2D_lkaj3")
