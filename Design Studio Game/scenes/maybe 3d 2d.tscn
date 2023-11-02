@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8kfoxgm06ju1"]
 
-[ext_resource type="PackedScene" uid="uid://celh2dyly8ntr" path="res://objects/3droach.tscn" id="2_1xtwe"]
+[ext_resource type="PackedScene" uid="uid://celh2dyly8ntr" path="res://scenes/3droach.tscn" id="2_1xtwe"]
 [ext_resource type="Texture2D" uid="uid://d26ftaakgd380" path="res://assets/tiles/7.png" id="2_ks7xr"]
 [ext_resource type="Shader" path="res://shaders/3dpixelationshader.gdshader" id="2_x80qk"]
 [ext_resource type="Texture2D" uid="uid://camq7pfadlox5" path="res://icon.svg" id="3_cepw4"]

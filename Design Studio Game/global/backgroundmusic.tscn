@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3m8rcqriilgd"]
+
+[ext_resource type="AudioStream" uid="uid://cqf2sgin7sh0c" path="res://objects/No_Return_trimmed.mp3" id="1_t1fma"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_t1fma")
+autoplay = true

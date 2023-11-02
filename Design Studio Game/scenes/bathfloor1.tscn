@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://ckpvkplrxhcc0"]
+[gd_scene load_steps=20 format=3 uid="uid://ckpvkplrxhcc0"]
 
-[ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="1_fc02e"]
+[ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://scenes/roach2d.tscn" id="1_fc02e"]
 [ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="2_nf544"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_riflt"]
@@ -14,7 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://byd8bkiartw3e" path="res://objects/frame0007.jpg" id="10_r8kqw"]
 [ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_q45cs"]
 [ext_resource type="Script" path="res://scripts/exit_scene.gd" id="14_35rnw"]
-[ext_resource type="AudioStream" uid="uid://cqf2sgin7sh0c" path="res://objects/No_Return_trimmed.mp3" id="14_ro0of"]
+[ext_resource type="PackedScene" uid="uid://m7xrobj61rpn" path="res://scenes/Foot.tscn" id="15_wrbsl"]
+[ext_resource type="Script" path="res://scripts/roach.gd" id="16_pxivo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3dtr2"]
 animations = [{
@@ -141,8 +142,9 @@ shadow_item_cull_mask = 2
 texture = ExtResource("2_riflt")
 texture_scale = 4.6
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_ro0of")
-autoplay = true
+[node name="Foot" parent="." node_paths=PackedStringArray("_mc") instance=ExtResource("15_wrbsl")]
+position = Vector2(-223, 194)
+_mcs = ExtResource("16_pxivo")
+_mc = NodePath("../WhiteMCRoach")
 
 [connection signal="area_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_entered"]

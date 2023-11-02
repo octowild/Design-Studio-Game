@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd0bx5mcd10tp"]
 
-[ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="2_8dwtk"]
+[ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://scenes/roach2d.tscn" id="2_8dwtk"]
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="2_ifr4s"]
-[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="8_y2hip"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="8_y2hip"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true

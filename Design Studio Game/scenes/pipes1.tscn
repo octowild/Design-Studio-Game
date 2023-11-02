@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://bopptas6x3ina"]
+[gd_scene load_steps=20 format=3 uid="uid://bopptas6x3ina"]
 
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="1_l0ia6"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_4ctjp"]
-[ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://objects/roach2d.tscn" id="2_78ede"]
+[ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://scenes/roach2d.tscn" id="2_78ede"]
 [ext_resource type="Shader" path="res://shaders/circle_occlusion.gdshader" id="2_okaya"]
 [ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_3jxgq"]
 [ext_resource type="Texture2D" uid="uid://cdkgsisne1376" path="res://objects/frame0001.jpg" id="4_5vkj3"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://ceytmp6xooow2" path="res://objects/frame0006.jpg" id="9_crkhy"]
 [ext_resource type="Texture2D" uid="uid://byd8bkiartw3e" path="res://objects/frame0007.jpg" id="10_786f4"]
 [ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_fwmcj"]
-[ext_resource type="AudioStream" uid="uid://cqf2sgin7sh0c" path="res://objects/No_Return_trimmed.mp3" id="14_e42yn"]
 
 [sub_resource type="Gradient" id="Gradient_pgq72"]
 colors = PackedColorArray(0.635294, 0.509804, 0.411765, 0, 0.124714, 0.107947, 0.213714, 1)
@@ -121,10 +120,6 @@ position = Vector2(4, 0)
 blend_mode = 1
 texture = ExtResource("2_4ctjp")
 texture_scale = 3.7
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_e42yn")
-autoplay = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(1999, 834)
