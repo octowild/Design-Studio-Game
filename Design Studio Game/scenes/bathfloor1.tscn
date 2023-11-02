@@ -1,12 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=20 format=3 uid="uid://ckpvkplrxhcc0"]
-=======
-<<<<<<< HEAD
-[gd_scene load_steps=25 format=3 uid="uid://ckpvkplrxhcc0"]
-=======
-[gd_scene load_steps=20 format=3 uid="uid://ckpvkplrxhcc0"]
->>>>>>> 0455306327b966aad4d9bed7d7b429cc6edbec69
->>>>>>> Stashed changes
+[gd_scene load_steps=19 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://scenes/roach2d.tscn" id="1_fc02e"]
 [ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
@@ -21,10 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ceytmp6xooow2" path="res://objects/frame0006.jpg" id="9_h0und"]
 [ext_resource type="Texture2D" uid="uid://byd8bkiartw3e" path="res://objects/frame0007.jpg" id="10_r8kqw"]
 [ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_q45cs"]
-[ext_resource type="Shader" path="res://shaders/colorshader.gdshader" id="12_yv2u2"]
 [ext_resource type="Script" path="res://scripts/exit_scene.gd" id="14_35rnw"]
 [ext_resource type="PackedScene" uid="uid://m7xrobj61rpn" path="res://scenes/Foot.tscn" id="15_wrbsl"]
-[ext_resource type="Script" path="res://scripts/roach.gd" id="16_pxivo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3dtr2"]
 animations = [{
@@ -61,26 +51,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_8ua7g"]
-offsets = PackedFloat32Array(0, 0.268293, 0.325203, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.47549, 0.663354, 0.693403, 1, 0.524076, 0.642012, 0.620628, 1, 0.767006, 0.535305, 0.256756, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rq737"]
-gradient = SubResource("Gradient_8ua7g")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhu4f"]
-shader = ExtResource("12_yv2u2")
-shader_parameter/opacity = 0.37
-shader_parameter/gradient = SubResource("GradientTexture2D_rq737")
-
-[sub_resource type="Gradient" id="Gradient_n6j8a"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_njcsl"]
-gradient = SubResource("Gradient_n6j8a")
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dntgv"]
 polygon = PackedVector2Array(-15, -4, -16, 4, -13, 5, -9, 4, -5, 6, 3, 7, 8, 8, 16, 7, 23, 4, 24, 1, 17, -3, 7, -7, 1, -8, -8, -8)
 
@@ -104,41 +74,23 @@ animation = &"graining"
 autoplay = "graining"
 frame_progress = 0.55082
 
-[node name="Sprite2D2" type="Sprite2D" parent="WhiteMCRoach/Camera2D"]
-material = SubResource("ShaderMaterial_qhu4f")
-scale = Vector2(8.0625, 8.0625)
-texture = SubResource("GradientTexture2D_njcsl")
-
 [node name="PointLight2D" type="PointLight2D" parent="WhiteMCRoach"]
-position = Vector2(-2, 0)
-scale = Vector2(1.13333, 1.13333)
-color = Color(0.545098, 0.513726, 0.337255, 0)
-energy = 0.4
-blend_mode = 1
-range_item_cull_mask = 2
-shadow_enabled = true
-shadow_color = Color(0.0431373, 0.027451, 0.0627451, 1)
-shadow_filter = 2
-texture = ExtResource("2_riflt")
-
-[node name="PointLight2D2" type="PointLight2D" parent="WhiteMCRoach"]
 position = Vector2(-2, 0)
 scale = Vector2(1.13333, 1.13333)
 color = Color(0.545098, 0.513726, 0.337255, 1)
 energy = 0.4
 range_item_cull_mask = 2
+shadow_enabled = true
 shadow_color = Color(0.0117647, 0.0117647, 0.0470588, 0.862745)
 shadow_filter = 2
 texture = ExtResource("2_riflt")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="WhiteMCRoach"]
-visible = false
 occluder = SubResource("OccluderPolygon2D_dntgv")
 occluder_light_mask = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 2
-y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-16, 5)
 tile_set = ExtResource("2_nf544")
@@ -160,14 +112,14 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = -3
-layer_2/tile_data = PackedInt32Array(65537, 327681, 5, 65539, 458753, 5, 65538, 393217, 5, 655351, 851972, 4, 786423, 851972, 0, 524279, 851972, 3, 720887, 851972, 3, 589815, 851972, 2, -65554, 327690, 4, -65553, 393226, 4, -17, 393226, 5, -65552, 458762, 4, -16, 458762, 5, -65551, 524298, 4, 262126, 524298, 9, 327662, 524298, 10, 262127, 589834, 9, 327663, 589834, 10, 262128, 655370, 9, 327664, 655370, 10, 262129, 720906, 9, 327665, 720906, 10, 720865, 10, 4, 720866, 65546, 4, 720867, 131082, 4, 720868, 196618, 4, 196585, 786433, 6, 196586, 851969, 6, 196587, 917505, 6)
+layer_2/tile_data = PackedInt32Array(65537, 327681, 5, 65539, 458753, 5, 65538, 393217, 5, 655351, 851972, 4, 786423, 851972, 0, 524279, 851972, 3, 720887, 851972, 3, 589815, 851972, 2, -131090, 327690, 3, -65554, 327690, 4, -131089, 393226, 3, -65553, 393226, 4, -17, 393226, 5, -131088, 458762, 3, -65552, 458762, 4, -16, 458762, 5, -131087, 524298, 3, -65551, 524298, 4, 196590, 524298, 8, 262126, 524298, 9, 327662, 524298, 10, 196591, 589834, 8, 262127, 589834, 9, 327663, 589834, 10, 196592, 655370, 8, 262128, 655370, 9, 327664, 655370, 10, 196593, 720906, 8, 262129, 720906, 9, 327665, 720906, 10, 131049, 786433, 5, 196585, 786433, 6, 131050, 851969, 5, 196586, 851969, 6, 131051, 917505, 5, 196587, 917505, 6, 720865, 10, 4, 720866, 65546, 4, 720867, 131082, 4, 720868, 196618, 4)
 layer_3/name = "onground"
 layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 5
-layer_3/tile_data = PackedInt32Array(1, 327681, 4, 2, 393217, 4, 3, 458753, 4, -196626, 327690, 2, -262161, 393226, 1, -196625, 393226, 2, -262160, 458762, 1, -196624, 458762, 2, -196623, 524298, 2, -18, 524298, 5, 65518, 524298, 6, -17, 589834, 5, 65519, 589834, 6, -16, 655370, 5, 65520, 655370, 6, -15, 720906, 5, 65521, 720906, 6, 131054, 524298, 7, 131055, 589834, 7, 131056, 655370, 7, 131057, 720906, 7, 786406, 10, 6, 851942, 10, 7, 917478, 10, 8, 983014, 10, 9, 1048550, 10, 10, 786407, 65546, 6, 851943, 65546, 7, 917479, 65546, 8, 983015, 65546, 9, 1048551, 65546, 10, 786408, 131082, 6, 851944, 131082, 7, 917480, 131082, 8, 983016, 131082, 9, 1048552, 131082, 10, 786409, 196618, 6, 851945, 196618, 7, 917481, 196618, 8, 983017, 196618, 9, 1048553, 196618, 10, 786410, 262154, 6, 851946, 262154, 7, 917482, 262154, 8, 983018, 262154, 9, 1048554, 262154, 10, -23, 786433, 3, 65513, 786433, 4, -22, 851969, 3, 65514, 851969, 4, -21, 917505, 3, 65515, 917505, 4, 131049, 786433, 5, 131050, 851969, 5, 131051, 917505, 5, 196590, 524298, 8, 196591, 589834, 8, 196592, 655370, 8, 196593, 720906, 8, -131090, 327690, 3, -131089, 393226, 3, -131088, 458762, 3, -131087, 524298, 3)
+layer_3/tile_data = PackedInt32Array(1, 327681, 4, 2, 393217, 4, 3, 458753, 4, -196626, 327690, 2, -262161, 393226, 1, -196625, 393226, 2, -262160, 458762, 1, -196624, 458762, 2, -196623, 524298, 2, -18, 524298, 5, 65518, 524298, 6, -17, 589834, 5, 65519, 589834, 6, -16, 655370, 5, 65520, 655370, 6, -15, 720906, 5, 65521, 720906, 6, 131054, 524298, 7, 131055, 589834, 7, 131056, 655370, 7, 131057, 720906, 7, 786406, 10, 6, 851942, 10, 7, 917478, 10, 8, 983014, 10, 9, 1048550, 10, 10, 786407, 65546, 6, 851943, 65546, 7, 917479, 65546, 8, 983015, 65546, 9, 1048551, 65546, 10, 786408, 131082, 6, 851944, 131082, 7, 917480, 131082, 8, 983016, 131082, 9, 1048552, 131082, 10, 786409, 196618, 6, 851945, 196618, 7, 917481, 196618, 8, 983017, 196618, 9, 1048553, 196618, 10, 786410, 262154, 6, 851946, 262154, 7, 917482, 262154, 8, 983018, 262154, 9, 1048554, 262154, 10, -23, 786433, 3, 65513, 786433, 4, -22, 851969, 3, 65514, 851969, 4, -21, 917505, 3, 65515, 917505, 4)
 
 [node name="Area2D" type="Area2D" parent="TileMap"]
 collision_layer = 4
@@ -191,7 +143,6 @@ texture_scale = 4.6
 
 [node name="Foot" parent="." node_paths=PackedStringArray("_mc") instance=ExtResource("15_wrbsl")]
 position = Vector2(-223, 194)
-_mcs = ExtResource("16_pxivo")
 _mc = NodePath("../WhiteMCRoach")
 
 [connection signal="area_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_entered"]
