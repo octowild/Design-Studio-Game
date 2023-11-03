@@ -38,5 +38,6 @@ autostart = true
 [node name="trigcol" type="CollisionShape2D" parent="trig"]
 shape = SubResource("CircleShape2D_ks85f")
 
+[connection signal="body_entered" from="Foot/kill" to="." method="_on_kill_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="trig" to="." method="_on_trig_body_entered"]

@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 var _spritedir:Vector2=Vector2(0,-1)
 var _intightspace:bool=false
+var _isded:bool=false
 
 @onready var _sprite=$Sprite2D
 @onready var _anim=$AnimationTree
