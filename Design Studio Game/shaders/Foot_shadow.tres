@@ -4,3 +4,4 @@
 
 [resource]
 shader = ExtResource("1_0epxi")
+shader_parameter/lod = 0.0

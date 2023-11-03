@@ -1,5 +1,6 @@
 shader_type canvas_item;
 
-void fragment() {
-	// Place fragment code here.
+void fragment(){
+
+	COLOR.a=COLOR.a-0.5;
 }
