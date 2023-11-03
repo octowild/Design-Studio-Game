@@ -44,10 +44,10 @@ func _physics_process(delta):
 	#	velocity.x = move_toward(velocity.x, 0, _accel)
 		
 	if(_dash):
-		if(velocity.length()<=400):
+		if(velocity.length()<=600):
 			velocity*=_dashstr
 		else:
-			velocity=lerp(velocity,velocity.normalized()/5*_speed,0.1)
+			velocity=lerp(velocity,velocity.normalized()*_speed,1)
 		if(velocity.length()>=_speed):
 			_movelock=false
 			_dash=false
