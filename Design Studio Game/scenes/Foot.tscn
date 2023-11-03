@@ -1,12 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://m7xrobj61rpn"]
 
 [ext_resource type="Script" path="res://scripts/Foot.gd" id="1_5w7r4"]
-[ext_resource type="Texture2D" uid="uid://c0rbh80joyhph" path="res://assets/misc/ShadowTheHedgehogSA2.png" id="2_bl4el"]
 [ext_resource type="Script" path="res://scripts/roach.gd" id="2_f65vk"]
-[ext_resource type="Texture2D" uid="uid://c3pjuj05prmn3" path="res://assets/misc/sanic.png" id="3_ierbg"]
+[ext_resource type="Texture2D" uid="uid://crf41rfj76lk3" path="res://assets/sprites/foot_shadow.png" id="3_o743f"]
+[ext_resource type="Texture2D" uid="uid://bhb5b2x2p4k0" path="res://assets/sprites/foot_1.png" id="4_v51uu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_easdr"]
-size = Vector2(228, 212)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5mgt"]
+radius = 31.0
+height = 180.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks85f"]
 radius = 15.0333
@@ -17,16 +18,19 @@ _mcs = ExtResource("2_f65vk")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_bl4el")
+texture = ExtResource("3_o743f")
 
 [node name="Foot" type="Sprite2D" parent="."]
-position = Vector2(0, -1000)
-texture = ExtResource("3_ierbg")
+position = Vector2(0, -500)
+texture = ExtResource("4_v51uu")
+offset = Vector2(0, -150)
 
 [node name="kill" type="Area2D" parent="Foot"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foot/kill"]
-shape = SubResource("RectangleShape2D_easdr")
+position = Vector2(5, 12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_f5mgt")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
