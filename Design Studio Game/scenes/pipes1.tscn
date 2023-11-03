@@ -84,7 +84,6 @@ position = Vector2(16, -17)
 
 [node name="Camera2D" type="Camera2D" parent="WhiteMCRoach"]
 z_index = 10
-position = Vector2(-16, 17)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WhiteMCRoach/Camera2D"]
 texture_repeat = 2
@@ -95,7 +94,6 @@ animation = &"graining"
 autoplay = "graining"
 
 [node name="PointLight2D" type="PointLight2D" parent="WhiteMCRoach"]
-position = Vector2(-2, 0)
 scale = Vector2(0.94, 0.94)
 color = Color(0.345098, 0.368627, 0.32549, 1)
 energy = 2.85
@@ -106,7 +104,6 @@ shadow_filter = 2
 texture = ExtResource("2_4ctjp")
 
 [node name="PointLight2D2" type="PointLight2D" parent="WhiteMCRoach"]
-position = Vector2(-2, 0)
 scale = Vector2(0.993333, 1.08)
 color = Color(0.733333, 0.721569, 0.729412, 1)
 energy = 1.26
@@ -116,7 +113,6 @@ shadow_filter = 2
 texture = ExtResource("2_4ctjp")
 
 [node name="darkness light" type="PointLight2D" parent="WhiteMCRoach"]
-position = Vector2(4, 0)
 blend_mode = 1
 texture = ExtResource("2_4ctjp")
 texture_scale = 3.7

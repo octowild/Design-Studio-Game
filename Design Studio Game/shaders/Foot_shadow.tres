@@ -13,5 +13,5 @@ fill_to = Vector2(1, 0.5)
 
 [resource]
 shader = ExtResource("1_0epxi")
-shader_parameter/transparency = 0.0
+shader_parameter/transparency = 0.2
 shader_parameter/colors = SubResource("GradientTexture2D_3eaae")
