@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var _movespeed:int = 150
-@export var _sprintspeed:int=600
+@export var _sprintspeed:int=300
 @export var _accel:int=50
 
 
