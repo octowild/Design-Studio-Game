@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ckpvkplrxhcc0"]
+[gd_scene load_steps=22 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://scenes/roach2d.tscn" id="1_fc02e"]
 [ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
+[ext_resource type="Material" uid="uid://cpynxhu0wehk3" path="res://shaders/screencoloradj.tres" id="2_7evqa"]
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="2_nf544"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_riflt"]
 [ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_lb1be"]
@@ -15,6 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_q45cs"]
 [ext_resource type="Script" path="res://scripts/exit_scene.gd" id="14_35rnw"]
 [ext_resource type="PackedScene" uid="uid://m7xrobj61rpn" path="res://scenes/Foot.tscn" id="15_wrbsl"]
+
+[sub_resource type="Gradient" id="Gradient_1yryj"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d4g1c"]
+gradient = SubResource("Gradient_1yryj")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3dtr2"]
 animations = [{
@@ -65,8 +72,13 @@ position = Vector2(-17, 4)
 [node name="Camera2D" type="Camera2D" parent="WhiteMCRoach"]
 z_index = 20
 
+[node name="Sprite2D" type="Sprite2D" parent="WhiteMCRoach/Camera2D"]
+material = ExtResource("2_7evqa")
+position = Vector2(0, 1)
+scale = Vector2(7.6875, 7.6875)
+texture = SubResource("GradientTexture2D_d4g1c")
+
 [node name="noise" type="AnimatedSprite2D" parent="WhiteMCRoach/Camera2D"]
-texture_repeat = 2
 material = ExtResource("1_w0mji")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3dtr2")

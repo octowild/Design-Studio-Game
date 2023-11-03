@@ -17,10 +17,12 @@ script = ExtResource("1_5w7r4")
 _mcs = ExtResource("2_f65vk")
 
 [node name="Shadow" type="Sprite2D" parent="."]
+z_index = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_o743f")
 
 [node name="Foot" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(0, -500)
 texture = ExtResource("4_v51uu")
 offset = Vector2(0, -150)
