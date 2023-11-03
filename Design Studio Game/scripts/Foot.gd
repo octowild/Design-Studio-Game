@@ -26,8 +26,6 @@ func _physics_process(delta):
 	else:
 		foot.position.y=lerp(foot.position.y,float(0),_fallspeed/50)
 		shadow.scale=lerp(shadow.scale,Vector2(1,1),_shadowspeed/100)
-	print(foot.position)
-
 
 func _on_trig_body_entered(body):
 	_stamp=true
@@ -35,10 +33,8 @@ func _on_trig_body_entered(body):
 	_timer.start()
 
 func _on_timer_timeout():
-	_contact=true
 	_stamp=false
 
 func _on_kill_body_entered(body):
-	
 	if(body.name=="WhiteMCRoach"&&_contact):
 		_mcs._isded=true
