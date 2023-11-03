@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export var _movespeed:int = 150
-@export var _sprintspeed:int=300
+@export var _speed:int = 150
+@export var _dashstr:int=4
 @export var _accel:int=50
 
 
@@ -10,7 +10,6 @@ var _spritedir:Vector2=Vector2(0,-1)
 var _intightspace:bool=false
 var _isded:bool=false
 var _dash:bool=false
-var _speed:int
 
 @onready var _sprite=$Sprite2D
 @onready var _anim=$AnimationTree
@@ -45,13 +44,8 @@ func _physics_process(delta):
 	#	velocity.x = move_toward(velocity.x, 0, _accel)
 		
 	if(_dash):
-		_speed=_sprintspeed
-	else:
-		_speed=_movespeed
-		
-	if(!_intightspace):
-		_updateanim(direction)
-	
+		velocity*=_dashstr
+
 	if (abs(velocity.x)<abs(velocity.y)):
 		_collider.set_rotation_degrees(0)
 		_trigcol.set_rotation_degrees(0)
@@ -62,7 +56,8 @@ func _physics_process(delta):
 		_collider.set_rotation_degrees(90)
 		_trigcol.set_rotation_degrees(90)
 
-	
+	if(!_intightspace):
+		_updateanim(direction)
 	move_and_slide()
 	_changestate()
 
