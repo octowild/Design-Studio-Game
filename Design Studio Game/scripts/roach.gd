@@ -27,8 +27,9 @@ func _physics_process(delta):
 		Input.get_action_strength("right")-Input.get_action_strength("left"),
 		Input.get_action_strength("down")-Input.get_action_strength("up")
 		)
-	if (Input.is_action_just_pressed("run")):
+	if (Input.is_action_just_pressed("run")&&!_movelock):
 		_dash=true
+		_movelock=true
 	if (direction&&!_movelock):
 		velocity= lerp(velocity,direction*_speed,0.2)
 	else:
@@ -46,8 +47,7 @@ func _physics_process(delta):
 		if(velocity.length()<=400):
 			velocity*=_dashstr
 		else:
-			_movelock=true
-			velocity=lerp(velocity,velocity.normalized()*_speed,0.1)
+			velocity=lerp(velocity,velocity.normalized()/5*_speed,0.1)
 		if(velocity.length()>=_speed):
 			_movelock=false
 			_dash=false
