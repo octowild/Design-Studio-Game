@@ -75,7 +75,7 @@ func _updateanim(dir:Vector2):
 		_anim.set("parameters/idle/blend_position",dir)
 		_anim.set("parameters/run/blend_position",dir)
 func _changestate():
-	if(velocity!=Vector2.ZERO):
+	if(abs(velocity.x)+abs(velocity.y)>=0.2):
 		_statemachine.travel("run")
 	else:
 		_statemachine.travel("idle")
