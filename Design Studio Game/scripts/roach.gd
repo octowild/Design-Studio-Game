@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var _speed:int = 150
-@export var _dashstr:int=4
+@export var _dashstr:int=5
 @export var _accel:int=50
 
 
@@ -10,6 +10,7 @@ var _spritedir:Vector2=Vector2(0,-1)
 var _intightspace:bool=false
 var _isded:bool=false
 var _dash:bool=false
+var _movelock:bool=false
 
 @onready var _sprite=$Sprite2D
 @onready var _anim=$AnimationTree
@@ -28,9 +29,7 @@ func _physics_process(delta):
 		)
 	if (Input.is_action_just_pressed("run")):
 		_dash=true
-	else:
-		_dash=false
-	if direction:
+	if (direction&&!_movelock):
 		velocity= lerp(velocity,direction*_speed,0.2)
 	else:
 		velocity = lerp(velocity,Vector2(0,0),0.2)
@@ -44,7 +43,14 @@ func _physics_process(delta):
 	#	velocity.x = move_toward(velocity.x, 0, _accel)
 		
 	if(_dash):
-		velocity*=_dashstr
+		if(velocity.length()<=400):
+			velocity*=_dashstr
+		else:
+			_movelock=true
+			velocity=lerp(velocity,velocity.normalized()*_speed,0.1)
+		if(velocity.length()>=_speed):
+			_movelock=false
+			_dash=false
 
 	if (abs(velocity.x)<abs(velocity.y)):
 		_collider.set_rotation_degrees(0)
