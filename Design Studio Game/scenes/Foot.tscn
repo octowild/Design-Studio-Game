@@ -30,7 +30,7 @@ shape = SubResource("RectangleShape2D_easdr")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 2.0
+wait_time = 2.5
 autostart = true
 
 [node name="trig" type="Area2D" parent="."]
