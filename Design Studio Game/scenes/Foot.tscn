@@ -40,7 +40,7 @@ shape = SubResource("CapsuleShape2D_f5mgt")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 2.5
+wait_time = 3.0
 autostart = true
 
 [node name="trig" type="Area2D" parent="."]
