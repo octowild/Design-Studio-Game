@@ -17,6 +17,7 @@ var _movelock:bool=false
 @onready var _statemachine=_anim.get("parameters/playback")
 @onready var _collider=$CollisionShape2D2
 @onready var _trigcol=$Area2D/CollisionShape2D2
+@onready var _dashcd=$dashcd
 
 func _ready():
 	_updateanim(_spritedir)
@@ -27,7 +28,7 @@ func _physics_process(delta):
 		Input.get_action_strength("right")-Input.get_action_strength("left"),
 		Input.get_action_strength("down")-Input.get_action_strength("up")
 		)
-	if (Input.is_action_just_pressed("run")&&!_movelock):
+	if (Input.is_action_just_pressed("dash")&&!_movelock):
 		_dash=true
 		_movelock=true
 	if (direction&&!_movelock):
@@ -44,13 +45,14 @@ func _physics_process(delta):
 	#	velocity.x = move_toward(velocity.x, 0, _accel)
 		
 	if(_dash):
-		if(velocity.length()<=600):
+		
+		if(velocity.length()<=450):
 			velocity*=_dashstr
 		else:
-			velocity=lerp(velocity,velocity.normalized()*_speed,1)
-		if(velocity.length()>=_speed):
 			_movelock=false
 			_dash=false
+			
+			
 
 	if (abs(velocity.x)<abs(velocity.y)):
 		_collider.set_rotation_degrees(0)
@@ -86,3 +88,7 @@ func _on_area_2d_body_entered(body):
 	print(body.get_name())
 func _on_area_2d_body_exited(body):
 	_intightspace=false
+
+
+func _on_dashcd_timeout():
+	_dash=false

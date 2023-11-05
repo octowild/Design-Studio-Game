@@ -26,6 +26,7 @@ func _physics_process(delta):
 	else:
 		shadow.scale=lerp(shadow.scale,Vector2(1,1),_shadowspeed/100)
 		foot.position.y=lerp(foot.position.y,float(0),_fallspeed/50)
+		
 
 func _on_trig_body_entered(body):
 	_stamp=true
