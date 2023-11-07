@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var _speed:int = 150
-@export var _dashstr:int=5
+@export var _dashstr:int=3
 @export var _accel:int=50
 
 
@@ -35,24 +35,18 @@ func _physics_process(delta):
 		velocity= lerp(velocity,direction*_speed,0.2)
 	else:
 		velocity = lerp(velocity,Vector2(0,0),0.2)
-	#if direction:
-	#	velocity.y=move_toward(velocity.y,_speed*direction.y,_accel)
-	#else:
-	#	velocity.y = move_toward(velocity.y, 0, _accel)
-	#if direction:
-	#	velocity.x=move_toward(velocity.x,_speed*direction.x,_accel)
-	#else:
-	#	velocity.x = move_toward(velocity.x, 0, _accel)
-		
+	print(_dash)
 	if(_dash):
-		
-		if(velocity.length()<=450):
-			velocity*=_dashstr
-		else:
-			_movelock=false
+		velocity=lerp(velocity,velocity*_dashstr,0.2)
+		if velocity.length()>=600:
 			_dash=false
-			
-			
+			_movelock=false
+		
+		#if(velocity.length()<=450):
+		#	velocity*=_dashstr
+		#else:
+		#	_movelock=false
+		#	_dash=false
 
 	if (abs(velocity.x)<abs(velocity.y)):
 		_collider.set_rotation_degrees(0)
@@ -78,17 +72,12 @@ func _updateanim(dir:Vector2):
 		_anim.set("parameters/idle/blend_position",dir)
 		_anim.set("parameters/run/blend_position",dir)
 func _changestate():
-	if(abs(velocity.x)+abs(velocity.y)>=0.2):
+	if(abs(velocity.x)+abs(velocity.y)>=5):
 		_statemachine.travel("run")
 	else:
 		_statemachine.travel("idle")
 
 func _on_area_2d_body_entered(body):
 	_intightspace=true
-	print(body.get_name())
 func _on_area_2d_body_exited(body):
 	_intightspace=false
-
-
-func _on_dashcd_timeout():
-	_dash=false
