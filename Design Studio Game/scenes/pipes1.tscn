@@ -77,7 +77,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="pipes1" type="Node2D"]
 
 [node name="WhiteMCRoach" parent="." instance=ExtResource("2_78ede")]
 position = Vector2(16, -17)

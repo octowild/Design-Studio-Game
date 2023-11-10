@@ -1,6 +1,5 @@
 extends AudioStreamPlayer
 var _curscn
-@onready var _musicplayer=$AudioStreamPlayer
 
 func _ready():
 	pass # Replace with function body.
@@ -9,6 +8,10 @@ func _ready():
 func _process(delta):
 	_curscn=get_tree().current_scene.name
 	if _curscn=="bathfloor1":
-		_musicplayer.source("res://objects/Goliath.mp3")
+		Backgroundmusic.stop()
+		Backgroundmusic.stream = load("res://objects/Goliath.mp3")
+		Backgroundmusic.play()
 	elif _curscn=="pipes1":
-		_musicplayer.source("res://objects/No_Return_trimmed.mp3")
+		Backgroundmusic.stop()
+		Backgroundmusic.stream = load("res://objects/No_Return_trimmed.mp3")
+		Backgroundmusic.play()
