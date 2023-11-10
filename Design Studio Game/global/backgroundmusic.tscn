@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3m8rcqriilgd"]
+[gd_scene load_steps=3 format=3 uid="uid://d3m8rcqriilgd"]
 
 [ext_resource type="AudioStream" uid="uid://cqf2sgin7sh0c" path="res://objects/No_Return_trimmed.mp3" id="1_t1fma"]
+[ext_resource type="Script" path="res://scripts/musiccontrol.gd" id="2_lev8u"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="Node" type="Node"]
+script = ExtResource("2_lev8u")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_t1fma")
 autoplay = true
