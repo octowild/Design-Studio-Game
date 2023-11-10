@@ -44,4 +44,5 @@ func _on_timer_timeout():
 
 func _on_kill_body_entered(body):
 	if(body.name=="WhiteMCRoach"):
-		_mcs._isded=true
+		#_mcs._isded=true
+		pass
