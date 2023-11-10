@@ -35,7 +35,6 @@ func _physics_process(delta):
 		velocity= lerp(velocity,direction*_speed,0.2)
 	else:
 		velocity = lerp(velocity,Vector2(0,0),0.2)
-	print(_dash)
 	if(_dash):
 		velocity=lerp(velocity,velocity*_dashstr,0.2)
 		if velocity.length()>=600:
