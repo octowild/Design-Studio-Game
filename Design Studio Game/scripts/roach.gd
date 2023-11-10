@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 @export var _speed:int = 150
 @export var _dashstr:int=3
-@export var _accel:int=50
 
 
 var _spritedir:Vector2=Vector2(0,-1)
@@ -12,7 +11,6 @@ var _isded:bool=false
 var _dash:bool=false
 var _movelock:bool=false
 
-@onready var _sprite=$Sprite2D
 @onready var _anim=$AnimationTree
 @onready var _statemachine=_anim.get("parameters/playback")
 @onready var _collider=$CollisionShape2D2
@@ -35,7 +33,6 @@ func _physics_process(delta):
 		velocity= lerp(velocity,direction*_speed,0.2)
 	else:
 		velocity = lerp(velocity,Vector2(0,0),0.2)
-	print(_dash)
 	if(_dash):
 		velocity=lerp(velocity,velocity*_dashstr,0.2)
 		if velocity.length()>=600:
@@ -60,6 +57,9 @@ func _physics_process(delta):
 
 	if(!_intightspace):
 		_updateanim(direction)
+	if _isded:
+		_movelock=true
+	print(_isded)
 	move_and_slide()
 	_changestate()
 
