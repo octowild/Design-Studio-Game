@@ -29,21 +29,16 @@ func _physics_process(delta):
 		shadow.scale=lerp(shadow.scale,Vector2(1,1),_shadowspeed/75)
 		if shadow.scale.x>=0.8:
 			foot.position.y-=lerp(foot.position.y,float(0),_fallspeed/7)
-	var pp:bool
 	if foot.position.y<-5:
 		_col.disabled=true
-		pp=true
 	else:
 		_col.disabled=false
-		pp=false
-		print(pp)
 
 func _on_trig_body_entered(body):
 	if(body.name=="WhiteMCRoach"):
 		_stamp=true
 		foot.position.y=position.y-1000
 		_timer.start()
-	
 
 func _on_timer_timeout():
 	_stamp=false
