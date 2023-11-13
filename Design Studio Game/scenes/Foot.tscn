@@ -14,7 +14,7 @@ height = 180.0
 radius = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n27hv"]
-radius = 80.025
+radius = 100.08
 
 [node name="Foot" type="CharacterBody2D"]
 collision_layer = 4
