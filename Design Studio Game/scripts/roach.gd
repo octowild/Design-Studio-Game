@@ -59,9 +59,7 @@ func _physics_process(delta):
 		_updateanim(direction)
 	if _isded:
 		_movelock=true
-	
-	print(_isded)
-	
+
 	move_and_slide()
 	_changestate()
 

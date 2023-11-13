@@ -11,6 +11,7 @@ var _stamp:bool=false
 var _contact:bool=false
 var _mcpos
 
+
 @onready var shadow=$Shadow
 @onready var foot=$Foot
 @onready var _timer=$Timer
@@ -44,5 +45,5 @@ func _on_timer_timeout():
 
 func _on_kill_body_entered(body):
 	if(body.name=="WhiteMCRoach"):
-		#_mcs._isded=true
-		pass
+		_mc._isded=true
+		
