@@ -1,7 +1,8 @@
-[gd_scene load_steps=88 format=3 uid="uid://dwa56kj00m1lh"]
+[gd_scene load_steps=87 format=3 uid="uid://dwa56kj00m1lh"]
 
 [ext_resource type="Texture2D" uid="uid://ca2vbx2m4ylp3" path="res://assets/sprites/shift/shift0000.png" id="1_boen2"]
 [ext_resource type="Texture2D" uid="uid://jx8801dhng4u" path="res://assets/sprites/arrows/arrows0000.png" id="1_isexs"]
+[ext_resource type="Script" path="res://scripts/main ui.gd" id="1_mqwwn"]
 [ext_resource type="Texture2D" uid="uid://chovee8vpu134" path="res://assets/sprites/arrows/arrows0001.png" id="2_22r2c"]
 [ext_resource type="Texture2D" uid="uid://b7holysg0qp6f" path="res://assets/sprites/shift/shift0001.png" id="2_xp3vb"]
 [ext_resource type="Texture2D" uid="uid://diskrdrqy04xt" path="res://assets/sprites/shift/shift0002.png" id="3_2ju26"]
@@ -350,26 +351,6 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="Animation" id="Animation_yiism"]
-resource_name = "wasd"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:sprite_frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6185"]
-_data = {
-"wasd": SubResource("Animation_yiism")
-}
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -377,17 +358,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mqwwn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wq64w")
-animation = &"shift"
-frame_progress = 0.313454
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+animation = &"wasd"
 autoplay = "wasd"
-libraries = {
-"": SubResource("AnimationLibrary_q6185")
-}
+frame_progress = 0.390824
 
 [node name="Label" type="Label" parent="."]
 z_index = 10
