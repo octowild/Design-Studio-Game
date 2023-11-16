@@ -61,3 +61,7 @@ func _tutorial():
 
 func _on_retry_pressed():
 	get_tree().reload_current_scene()
+
+func _on_exit_body_entered(body):
+	_bg.modulate=Color(0,0,0,1)
+	print("EEEE")

@@ -1418,8 +1418,7 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_pf2yd")
-animation = &"idle_left"
-frame = 7
+animation = &"idle_up"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
