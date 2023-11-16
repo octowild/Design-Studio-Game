@@ -11,6 +11,7 @@ var _stamp:bool=false
 var _contact:bool=false
 var _mcpos
 
+
 @onready var shadow=$Shadow
 @onready var foot=$Foot
 @onready var _timer=$Timer
@@ -29,20 +30,20 @@ func _physics_process(delta):
 		if shadow.scale.x>=0.8:
 			foot.position.y-=lerp(foot.position.y,float(0),_fallspeed/7)
 	if foot.position.y<-5:
-		_col.disabled=false
-	else:
 		_col.disabled=true
+	else:
+		_col.disabled=false
 
 func _on_trig_body_entered(body):
-	_stamp=true
-	foot.position.y=position.y-1000
-	_timer.start()
-	
+	if(body.name=="WhiteMCRoach"):
+		_stamp=true
+		foot.position.y=position.y-1000
+		_timer.start()
 
 func _on_timer_timeout():
 	_stamp=false
 
 func _on_kill_body_entered(body):
 	if(body.name=="WhiteMCRoach"):
-		#_mcs._isded=true
-		pass
+		_mc._isded=true
+		

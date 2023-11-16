@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://m7xrobj61rpn"]
+[gd_scene load_steps=9 format=3 uid="uid://m7xrobj61rpn"]
 
 [ext_resource type="Script" path="res://scripts/Foot.gd" id="1_5w7r4"]
 [ext_resource type="Script" path="res://scripts/roach.gd" id="2_f65vk"]
@@ -11,9 +11,14 @@ radius = 30.0
 height = 180.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks85f"]
-radius = 15.0333
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n27hv"]
+radius = 100.08
 
 [node name="Foot" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_5w7r4")
 _mcs = ExtResource("2_f65vk")
 
@@ -47,6 +52,9 @@ autostart = true
 
 [node name="trigcol" type="CollisionShape2D" parent="trig"]
 shape = SubResource("CircleShape2D_ks85f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n27hv")
 
 [connection signal="body_entered" from="Foot/kill" to="." method="_on_kill_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
