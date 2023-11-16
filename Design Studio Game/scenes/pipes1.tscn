@@ -211,4 +211,4 @@ script = ExtResource("14_txyl1")
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_hqiy8")
 
-[connection signal="area_entered" from="exit" to="exit" method="_on_area_entered"]
+[connection signal="body_entered" from="exit" to="WhiteMCRoach/Camera2D/Control" method="_on_exit_body_entered"]
