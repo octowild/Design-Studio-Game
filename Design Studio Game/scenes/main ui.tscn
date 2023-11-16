@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dwa56kj00m1lh"]
+[gd_scene load_steps=91 format=3 uid="uid://dwa56kj00m1lh"]
 
 [ext_resource type="Texture2D" uid="uid://ca2vbx2m4ylp3" path="res://assets/sprites/shift/shift0000.png" id="1_boen2"]
 [ext_resource type="Texture2D" uid="uid://jx8801dhng4u" path="res://assets/sprites/arrows/arrows0000.png" id="1_isexs"]
@@ -359,6 +359,16 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gg7xi"]
+bg_color = Color(0.721569, 0.721569, 0.721569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxhp7"]
+bg_color = Color(0.141176, 0.0823529, 0.0862745, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8q0bh"]
+font_size = 36
+font_color = Color(0.756863, 0.14902, 0.0666667, 1)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -402,8 +412,61 @@ grow_vertical = 2
 text = "W, A, S, D  To move (or arrow
  keys if u dumbdumb)"
 
+[node name="Panel" type="Panel" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="retry" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = 22.0
+offset_right = 65.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_gg7xi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sxhp7")
+text = "Retry"
+
+[node name="u died" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -51.0
+offset_right = 99.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_8q0bh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
+[connection signal="pressed" from="Panel/retry" to="." method="_on_retry_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
