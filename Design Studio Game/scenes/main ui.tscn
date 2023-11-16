@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dwa56kj00m1lh"]
+[gd_scene load_steps=88 format=3 uid="uid://dwa56kj00m1lh"]
 
 [ext_resource type="Texture2D" uid="uid://ca2vbx2m4ylp3" path="res://assets/sprites/shift/shift0000.png" id="1_boen2"]
 [ext_resource type="Texture2D" uid="uid://jx8801dhng4u" path="res://assets/sprites/arrows/arrows0000.png" id="1_isexs"]
@@ -85,6 +85,14 @@
 [ext_resource type="Texture2D" uid="uid://bqu80rxh5ccca" path="res://assets/sprites/arrows/arrows0057.png" id="58_olr5p"]
 [ext_resource type="Texture2D" uid="uid://c8x1rg5x0efg" path="res://assets/sprites/arrows/arrows0058.png" id="59_37g0y"]
 [ext_resource type="Texture2D" uid="uid://jylj1c0mrffk" path="res://assets/sprites/arrows/arrows0059.png" id="60_27wqy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkjeh"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.113725)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wq64w"]
 animations = [{
@@ -360,21 +368,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mqwwn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gkjeh")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(131.5, 44.5)
 sprite_frames = SubResource("SpriteFrames_wq64w")
 animation = &"wasd"
 autoplay = "wasd"
 frame_progress = 0.562353
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Panel"]
 z_index = 10
 texture_filter = 1
-layout_mode = 0
-offset_left = 35.0
-offset_top = -10.0
-offset_right = 177.0
-offset_bottom = 16.0
-text = "W, A, S, D  To move"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -102.0
+offset_right = 314.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "W, A, S, D  To move (or arrow keys if u dumbdumb)"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

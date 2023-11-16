@@ -167,17 +167,14 @@ position = Vector2(-1055, -1086)
 [node name="Camera2D" type="Camera2D" parent="WhiteMCRoach"]
 z_index = 20
 
-[node name="Control" parent="WhiteMCRoach/Camera2D" instance=ExtResource("6_3wpht")]
+[node name="Control" parent="WhiteMCRoach/Camera2D" node_paths=PackedStringArray("_mc") instance=ExtResource("6_3wpht")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -83.0
-offset_right = -78.0
-offset_bottom = -83.0
 size_flags_horizontal = 4
+_mc = NodePath("../..")
 
 [node name="Sprite2D" type="Sprite2D" parent="WhiteMCRoach/Camera2D"]
 material = ExtResource("2_7evqa")

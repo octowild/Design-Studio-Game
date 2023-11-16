@@ -20,7 +20,7 @@ var _mcpos
 func _physics_process(delta):
 	if (!_stamp):
 		_mcpos=_mc.position
-		position=lerp(position,_mcpos,_movespeed/100)
+		position=lerp(position,_mcpos,_movespeed/75)
 		if(foot.position.y>=-500):
 			foot.position.y-=50
 		#foot.position=lerp(foot.position,Vector2(position.x,position.y-1000),_fallspeed/200)
