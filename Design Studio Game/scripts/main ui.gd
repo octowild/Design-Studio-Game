@@ -22,8 +22,8 @@ func _process(delta):
 			label.modulate.a=lerp(label.modulate.a,0.0,0.05)
 			wasd=false
 		else:
-			animated_sprite_2d.modulate.a=lerp(animated_sprite_2d.modulate.a,255.0,0.01)
-			label.modulate.a=lerp(label.modulate.a,255.0,0.01)
+			animated_sprite_2d.modulate.a=lerp(animated_sprite_2d.modulate.a,255.0,0.005)
+			label.modulate.a=lerp(label.modulate.a,255.0,0.005)
 
 func _on_timer_timeout():
 	animated_sprite_2d.play("shift")
