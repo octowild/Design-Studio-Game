@@ -18,6 +18,8 @@ func _ready():
 	retry.disabled=true
 	retry.modulate=Color(1,1,1,0)
 	ded.modulate=Color(1,1,1,0)
+	if get_tree().current_scene.name=="bathfloor1":
+		_setopacity()
 
 func _process(delta):
 	if get_tree().current_scene.name=="bathfloor1":
@@ -34,6 +36,10 @@ func _on_timer_timeout():
 	animated_sprite_2d.play("shift")
 	label.text=("SHIFT to Dash")
 	fade=false
+	
+func _setopacity():
+	label.modulate.a=1
+	animated_sprite_2d.modulate.a=1
 	
 func _tutorial():
 	direction = Vector2(
