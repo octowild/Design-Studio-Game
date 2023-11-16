@@ -10,6 +10,7 @@ extends Control
 var fade=false
 var wasd=true
 var direction
+var new_style = StyleBoxFlat.new()
 
 func _process(delta):
 	direction = Vector2(
@@ -28,10 +29,14 @@ func _process(delta):
 	else:
 		animated_sprite_2d.modulate.a=lerp(animated_sprite_2d.modulate.a,255.0,0.005)
 		label.modulate.a=lerp(label.modulate.a,255.0,0.005)
-	if _mc._isded==true:
-		_bg.modulate=Color(255,0,0)
-		_bg.modulate.a=157
 	
+	#new_style.set_bg_color(Color(1,0,0,0))
+	if _mc._isded==true:
+		new_style.set_bg_color(Color(255,0,0,255))
+	
+
+	
+	_bg.set('custom_styles/panel', new_style)
 
 func _on_timer_timeout():
 	animated_sprite_2d.play("shift")
