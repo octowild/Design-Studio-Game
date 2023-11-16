@@ -364,7 +364,7 @@ script = ExtResource("1_mqwwn")
 sprite_frames = SubResource("SpriteFrames_wq64w")
 animation = &"wasd"
 autoplay = "wasd"
-frame_progress = 0.661846
+frame_progress = 0.630721
 
 [node name="Label" type="Label" parent="."]
 z_index = 10
@@ -375,3 +375,9 @@ offset_top = -10.0
 offset_right = 177.0
 offset_bottom = 16.0
 text = "W, A, S, D To move"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
