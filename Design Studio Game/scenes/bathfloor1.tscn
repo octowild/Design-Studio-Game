@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ckpvkplrxhcc0"]
+[gd_scene load_steps=34 format=3 uid="uid://ckpvkplrxhcc0"]
 
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://scenes/roach2d.tscn" id="1_fc02e"]
 [ext_resource type="Material" uid="uid://bv52e1acee54u" path="res://shaders/noiseshader.tres" id="1_w0mji"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_lb1be"]
 [ext_resource type="Texture2D" uid="uid://cdkgsisne1376" path="res://objects/frame0001.jpg" id="4_eh82c"]
 [ext_resource type="Texture2D" uid="uid://cre7v5k216cet" path="res://objects/frame0002.jpg" id="5_vp3n0"]
+[ext_resource type="PackedScene" uid="uid://dwa56kj00m1lh" path="res://scenes/main ui.tscn" id="6_3wpht"]
 [ext_resource type="Texture2D" uid="uid://5dcurikksmfa" path="res://objects/frame0003.jpg" id="6_ylgsd"]
 [ext_resource type="Texture2D" uid="uid://hwg6ld1fgou3" path="res://objects/frame0004.jpg" id="7_i4we1"]
 [ext_resource type="Texture2D" uid="uid://crlb8tujh8xjt" path="res://objects/frame0005.jpg" id="8_0s8yy"]
@@ -165,6 +166,18 @@ position = Vector2(-1020, -96)
 
 [node name="Camera2D" type="Camera2D" parent="WhiteMCRoach"]
 z_index = 20
+
+[node name="Control" parent="WhiteMCRoach/Camera2D" instance=ExtResource("6_3wpht")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -83.0
+offset_right = -78.0
+offset_bottom = -83.0
+size_flags_horizontal = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="WhiteMCRoach/Camera2D"]
 material = ExtResource("2_7evqa")
