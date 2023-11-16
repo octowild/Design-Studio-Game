@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 
 @export var _speed:int = 150
-@export var _dashstr:int=3
-
+@export var _dashstr:int=600
 
 var _spritedir:Vector2=Vector2(0,-1)
 var _intightspace:bool=false
 var _isded:bool=false
 var _dash:bool=false
 var _movelock:bool=false
+var _dashlock:bool=false
 
 @onready var _anim=$AnimationTree
 @onready var _statemachine=_anim.get("parameters/playback")
@@ -26,18 +26,16 @@ func _physics_process(delta):
 		Input.get_action_strength("right")-Input.get_action_strength("left"),
 		Input.get_action_strength("down")-Input.get_action_strength("up")
 		)
-	if (Input.is_action_just_pressed("dash")&&!_movelock):
+	if (Input.is_action_just_pressed("dash")&&!_movelock&&!_dashlock):
 		_dash=true
 		_movelock=true
+		_dashlock=true
 	if (direction&&!_movelock):
 		velocity= lerp(velocity,direction*_speed,0.2)
 	else:
 		velocity = lerp(velocity,Vector2(0,0),0.2)
 	if(_dash):
-		velocity=lerp(velocity,velocity*_dashstr,0.2)
-		if velocity.length()>=600:
-			_dash=false
-			_movelock=false
+		velocity=lerp(velocity,velocity.normalized()*_dashstr,0.3)
 		
 		#if(velocity.length()<=450):
 		#	velocity*=_dashstr
@@ -63,6 +61,15 @@ func _physics_process(delta):
 	move_and_slide()
 	_changestate()
 
+func _process(delta):
+	if(_dash):
+		await get_tree().create_timer(0.3).timeout
+		#if velocity.length()>=600:
+		_dash=false
+		_movelock=false
+		await get_tree().create_timer(0.7).timeout
+		_dashlock=false
+		
 
 
 
