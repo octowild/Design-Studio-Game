@@ -1,7 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlt0j2da28fch"]
+[gd_scene load_steps=23 format=3 uid="uid://dlt0j2da28fch"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_iuuvd"]
-[ext_resource type="Texture2D" uid="uid://3r7a6yvksisy" path="res://assets/misc/knuckles.png" id="2_ncv1j"]
+[ext_resource type="Texture2D" uid="uid://f8q1xrw1n1qy" path="res://assets/sprites/mainmenu/start_idle.png" id="2_eq4k1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/mainmenu/titlescreen_concept.png" id="2_esu8u"]
+[ext_resource type="Texture2D" uid="uid://cnb4j1hyu2uh" path="res://assets/sprites/mainmenu/TITLE_transparent.png" id="2_ga17x"]
+[ext_resource type="Texture2D" uid="uid://di31imqe8gsmt" path="res://assets/sprites/mainmenu/quit_idle.png" id="3_6oxtg"]
+[ext_resource type="Texture2D" uid="uid://cjlkhnnkjoia2" path="res://assets/sprites/mainmenu/start_hover.png" id="3_p3hbw"]
+[ext_resource type="Texture2D" uid="uid://dbi3sqsacoir4" path="res://assets/sprites/mainmenu/start_click.png" id="4_1ar28"]
+[ext_resource type="Texture2D" uid="uid://blfmjutlcwvm1" path="res://assets/sprites/mainmenu/credits_idle.png" id="4_3lcky"]
+[ext_resource type="Texture2D" uid="uid://bjy8v1j2b4ray" path="res://assets/sprites/mainmenu/quit_hover.png" id="7_xhybr"]
+[ext_resource type="Texture2D" uid="uid://cu1andxmlgob1" path="res://assets/sprites/mainmenu/quit_click.png" id="8_jo40n"]
+[ext_resource type="Texture2D" uid="uid://32dbq4vttvy2" path="res://assets/sprites/mainmenu/credits_hover.png" id="11_skt0k"]
+[ext_resource type="Texture2D" uid="uid://du31wa1st8s6h" path="res://assets/sprites/mainmenu/credits_click.png" id="12_hijwl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3aah"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -11,19 +21,32 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8, 0.8, 0.8, 0.121569)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsuw2"]
-bg_color = Color(0.898039, 0.898039, 0.905882, 0.847059)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_710c8"]
+texture = ExtResource("2_eq4k1")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vqta"]
-bg_color = Color(0.929412, 0.929412, 0.929412, 0.807843)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2l720"]
+texture = ExtResource("3_p3hbw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmbbc"]
+texture = ExtResource("4_1ar28")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mp4et"]
+texture = ExtResource("3_6oxtg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lp8gk"]
+texture = ExtResource("7_xhybr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vy0ae"]
+texture = ExtResource("8_jo40n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5bbs"]
+texture = ExtResource("4_3lcky")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yipvy"]
+texture = ExtResource("11_skt0k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dcmf"]
+texture = ExtResource("12_hijwl")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -35,6 +58,11 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iuuvd")
+
+[node name="TitlescreenConcept" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_esu8u")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -52,6 +80,22 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q3aah")
 metadata/_edit_lock_ = true
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -142.0
+offset_right = 229.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ga17x")
+expand_mode = 1
+
 [node name="play" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -59,16 +103,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -97.0
-offset_top = 2.0
-offset_right = 97.0
-offset_bottom = 40.0
+offset_left = -91.0
+offset_top = 49.0
+offset_right = -24.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.0588235, 0.313726, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_fsuw2")
-text = "Play"
+theme_override_styles/normal = SubResource("StyleBoxTexture_710c8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2l720")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gmbbc")
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 1
@@ -77,31 +122,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = 60.0
-offset_right = 96.0
-offset_bottom = 104.0
+offset_left = 24.0
+offset_top = 50.0
+offset_right = 91.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0.235294, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0vqta")
-text = "Quit Game"
+theme_override_styles/normal = SubResource("StyleBoxTexture_mp4et")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lp8gk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vy0ae")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="credits" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -112.0
-offset_right = 74.0
-offset_bottom = -22.0
+offset_left = -32.0
+offset_top = 89.0
+offset_right = 30.0
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ncv1j")
-expand_mode = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_u5bbs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yipvy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5dcmf")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
