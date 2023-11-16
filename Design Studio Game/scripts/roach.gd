@@ -76,6 +76,8 @@ func _changestate():
 		_statemachine.travel("run")
 	else:
 		_statemachine.travel("idle")
+	if _isded:
+		_statemachine.travel("death")
 
 func _on_area_2d_body_entered(body):
 	_intightspace=true
