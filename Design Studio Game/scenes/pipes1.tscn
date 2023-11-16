@@ -99,12 +99,13 @@ animation = &"graining"
 autoplay = "graining"
 
 [node name="Control" parent="WhiteMCRoach/Camera2D" node_paths=PackedStringArray("_mc") instance=ExtResource("2_bmyjk")]
+visible = false
 _mc = NodePath("../..")
 
 [node name="PointLight2D" type="PointLight2D" parent="WhiteMCRoach"]
 scale = Vector2(0.94, 0.94)
 color = Color(0.345098, 0.368627, 0.32549, 1)
-energy = 2.85
+energy = 3.76
 range_z_max = 0
 shadow_enabled = true
 shadow_color = Color(0.00392157, 0.00392157, 0.0117647, 0.964706)
@@ -114,7 +115,7 @@ texture = ExtResource("2_4ctjp")
 [node name="PointLight2D2" type="PointLight2D" parent="WhiteMCRoach"]
 scale = Vector2(0.993333, 1.08)
 color = Color(0.733333, 0.721569, 0.729412, 1)
-energy = 1.26
+energy = 1.57
 range_z_min = 0
 shadow_color = Color(0.00392157, 0.00392157, 0.0117647, 0.964706)
 shadow_filter = 2
