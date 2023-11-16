@@ -74,9 +74,9 @@ func _updateanim(dir:Vector2):
 func _changestate():
 	if(abs(velocity.x)+abs(velocity.y)>=5):
 		_statemachine.travel("run")
-	else:
+	elif !_isded:
 		_statemachine.travel("idle")
-	if _isded:
+	elif _isded:
 		_statemachine.travel("death")
 
 func _on_area_2d_body_entered(body):
