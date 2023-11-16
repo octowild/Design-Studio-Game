@@ -388,6 +388,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_gkjeh")
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(165.5, 44.5)
 sprite_frames = SubResource("SpriteFrames_wq64w")
 animation = &"wasd"
@@ -395,6 +396,7 @@ autoplay = "wasd"
 frame_progress = 0.562353
 
 [node name="Label" type="Label" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
 z_index = 10
 texture_filter = 1
 layout_mode = 1

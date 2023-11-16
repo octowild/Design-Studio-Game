@@ -1,4 +1,4 @@
-extends Panel
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_exit_area_entered(area):
-	self.modulate.a=255.0
+func _on_area_entered(area):
+	pass # Replace with function body.

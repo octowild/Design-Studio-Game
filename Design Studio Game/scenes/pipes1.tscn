@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bopptas6x3ina"]
+[gd_scene load_steps=23 format=3 uid="uid://bopptas6x3ina"]
 
 [ext_resource type="TileSet" uid="uid://lfnljob6k8fm" path="res://assets/tiles/tilesets/bathnpipes.tres" id="1_l0ia6"]
 [ext_resource type="Texture2D" uid="uid://bm5i6lkgeddre" path="res://objects/pointlight.png" id="2_4ctjp"]
 [ext_resource type="PackedScene" uid="uid://ct37i7lcuusvx" path="res://scenes/roach2d.tscn" id="2_78ede"]
+[ext_resource type="PackedScene" uid="uid://dwa56kj00m1lh" path="res://scenes/main ui.tscn" id="2_bmyjk"]
 [ext_resource type="Shader" path="res://shaders/circle_occlusion.gdshader" id="2_okaya"]
 [ext_resource type="Texture2D" uid="uid://dcug4q2oyj2o7" path="res://objects/frame0000.jpg" id="3_3jxgq"]
 [ext_resource type="Texture2D" uid="uid://cdkgsisne1376" path="res://objects/frame0001.jpg" id="4_5vkj3"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ceytmp6xooow2" path="res://objects/frame0006.jpg" id="9_crkhy"]
 [ext_resource type="Texture2D" uid="uid://byd8bkiartw3e" path="res://objects/frame0007.jpg" id="10_786f4"]
 [ext_resource type="Texture2D" uid="uid://dcqr33taogghd" path="res://objects/frame0008.jpg" id="11_fwmcj"]
+[ext_resource type="Script" path="res://scripts/pipe_exit.gd" id="14_txyl1"]
 
 [sub_resource type="Gradient" id="Gradient_pgq72"]
 colors = PackedColorArray(0.635294, 0.509804, 0.411765, 0, 0.124714, 0.107947, 0.213714, 1)
@@ -95,6 +97,9 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qtfox")
 animation = &"graining"
 autoplay = "graining"
+
+[node name="Control" parent="WhiteMCRoach/Camera2D" node_paths=PackedStringArray("_mc") instance=ExtResource("2_bmyjk")]
+_mc = NodePath("../..")
 
 [node name="PointLight2D" type="PointLight2D" parent="WhiteMCRoach"]
 scale = Vector2(0.94, 0.94)
@@ -200,7 +205,10 @@ layer_2/tile_data = PackedInt32Array(-65534, 3, 3, 2, 3, 3, 65538, 3, 3, 131074,
 
 [node name="exit" type="Area2D" parent="."]
 position = Vector2(2000, 842)
+script = ExtResource("14_txyl1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_hqiy8")
+
+[connection signal="area_entered" from="exit" to="exit" method="_on_area_entered"]
