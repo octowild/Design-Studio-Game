@@ -364,7 +364,7 @@ script = ExtResource("1_mqwwn")
 sprite_frames = SubResource("SpriteFrames_wq64w")
 animation = &"wasd"
 autoplay = "wasd"
-frame_progress = 0.630721
+frame_progress = 0.110682
 
 [node name="Label" type="Label" parent="."]
 z_index = 10

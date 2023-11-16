@@ -15,14 +15,17 @@ func _process(delta):
 		if direction&&wasd:
 			fade=true
 			_timer.start()
+		if (Input.get_action_strength("dash")):
+			fade=true
 		if fade:
 			animated_sprite_2d.modulate.a=lerp(animated_sprite_2d.modulate.a,0.0,0.05)
 			label.modulate.a=lerp(label.modulate.a,0.0,0.05)
 			wasd=false
+		else:
+			animated_sprite_2d.modulate.a=lerp(animated_sprite_2d.modulate.a,255.0,0.01)
+			label.modulate.a=lerp(label.modulate.a,255.0,0.01)
 
 func _on_timer_timeout():
 	animated_sprite_2d.play("shift")
 	label.text=("SHIFT to Dash")
-	animated_sprite_2d.modulate.a=lerp(animated_sprite_2d.modulate.a,255.0,0.01)
-	label.modulate.a=lerp(label.modulate.a,255.0,0.01)
 	fade=false
