@@ -273,7 +273,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_aliua")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/idle/blend_position = Vector2(-0.039804, -0.129694)
+parameters/idle/blend_position = Vector2(-0.00105822, 0.0212355)
 parameters/run/blend_position = Vector2(-0.00480002, -0.00480342)
 
 [node name="Area2D" type="Area2D" parent="."]
