@@ -10,6 +10,7 @@ var _isded:bool=false
 var _dash:bool=false
 var _movelock:bool=false
 var _dashlock:bool=false
+var _insafezone:bool=false
 
 @onready var _anim=$AnimationTree
 @onready var _statemachine=_anim.get("parameters/playback")
@@ -57,7 +58,7 @@ func _physics_process(delta):
 		_updateanim(direction)
 	if _isded:
 		_movelock=true
-
+	print(_insafezone)
 	move_and_slide()
 	_changestate()
 
@@ -90,3 +91,9 @@ func _on_area_2d_body_entered(body):
 	_intightspace=true
 func _on_area_2d_body_exited(body):
 	_intightspace=false
+
+func _on_nofootzone_area_entered(area):
+	_insafezone=true
+
+func _on_nofootzone_area_exited(area):
+	_insafezone=false

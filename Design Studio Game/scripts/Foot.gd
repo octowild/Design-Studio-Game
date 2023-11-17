@@ -18,7 +18,7 @@ var _mcpos
 @onready var _col=$Foot/kill/CollisionShape2D
 
 func _physics_process(delta):
-	if (!_stamp):
+	if (!_stamp&&!_mc._insafezone):
 		_mcpos=_mc.position
 		position=lerp(position,_mcpos,_movespeed/75)
 		if(foot.position.y>=-500):
@@ -33,6 +33,8 @@ func _physics_process(delta):
 		_col.disabled=true
 	else:
 		_col.disabled=false
+	if _mc._insafezone:
+		position=Vector2(1000,1000)
 
 func _on_trig_body_entered(body):
 	if(body.name=="WhiteMCRoach"):

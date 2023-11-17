@@ -203,105 +203,107 @@ texture = ExtResource("2_riflt")
 occluder = SubResource("OccluderPolygon2D_dntgv")
 occluder_light_mask = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="nofootzone" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
 
-[node name="nofootzone" type="Area2D" parent="StaticBody2D"]
-visible = false
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-612, -1161)
+position = Vector2(-610, -1133)
 shape = SubResource("CircleShape2D_311g5")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-612, -1263)
+position = Vector2(-907, -872)
 shape = SubResource("CircleShape2D_311g5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-353, -1132)
 shape = SubResource("CircleShape2D_ehpcl")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(162, -1251)
 shape = SubResource("CircleShape2D_gh03j")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(235, -744)
 shape = SubResource("CircleShape2D_3r8oo")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-1138, -170)
 shape = SubResource("CircleShape2D_3r8oo")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(206, -658)
 shape = SubResource("CircleShape2D_embju")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-1108, -73)
 shape = SubResource("CircleShape2D_embju")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-545, -577)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ajcfh")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-516, -754)
 rotation = 0.494259
 shape = SubResource("CapsuleShape2D_6jkfc")
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-259, -56)
 shape = SubResource("CircleShape2D_smp08")
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-588, -71)
 shape = SubResource("CircleShape2D_4v4ei")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(824, -663)
 shape = SubResource("CircleShape2D_ghy5r")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(969, -663)
 shape = SubResource("CircleShape2D_ghy5r")
 
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(1031, -980)
 shape = SubResource("CircleShape2D_7kolx")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 4
+collision_mask = 4
+
 [connection signal="area_entered" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_entered"]
+[connection signal="area_entered" from="nofootzone" to="WhiteMCRoach" method="_on_nofootzone_area_entered"]
+[connection signal="area_exited" from="nofootzone" to="WhiteMCRoach" method="_on_nofootzone_area_exited"]
