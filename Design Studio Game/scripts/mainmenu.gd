@@ -14,9 +14,7 @@ func _process(delta):
 	pass
 
 func _on_play_pressed():
-	play.visible=false
-	quit.visible=false
-	credits.visible=false
+	_hidebutton()
 	skip.visible=true
 	skip.modulate.a=0.8
 	_cutscene.play()
@@ -31,4 +29,12 @@ func _on_video_stream_player_finished():
 
 func _on_skip_pressed():
 	get_tree().change_scene_to_file("res://scenes/bathfloor1.tscn")
-	print("skip")
+	
+func _hidebutton():
+	play.visible=false
+	quit.visible=false
+	credits.visible=false
+
+
+func _on_credits_pressed():
+	_hidebutton()
