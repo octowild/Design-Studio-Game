@@ -17,3 +17,5 @@ func _process(delta):
 			Backgroundmusic.stop()
 			Backgroundmusic.stream = load("res://objects/No_Return_trimmed.mp3")
 			Backgroundmusic.play()
+	elif _curscn=="Control":
+		Backgroundmusic.stop()

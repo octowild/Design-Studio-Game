@@ -411,8 +411,7 @@ offset_right = 348.0
 offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "W, A, S, D  To move (or arrow
- keys if u dumbdumb)"
+text = "W, A, S, D  To move"
 
 [node name="Panel" type="Panel" parent="Panel"]
 modulate = Color(1, 1, 1, 0)

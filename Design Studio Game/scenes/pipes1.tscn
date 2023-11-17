@@ -99,7 +99,6 @@ animation = &"graining"
 autoplay = "graining"
 
 [node name="Control" parent="WhiteMCRoach/Camera2D" node_paths=PackedStringArray("_mc") instance=ExtResource("2_bmyjk")]
-visible = false
 _mc = NodePath("../..")
 
 [node name="PointLight2D" type="PointLight2D" parent="WhiteMCRoach"]
