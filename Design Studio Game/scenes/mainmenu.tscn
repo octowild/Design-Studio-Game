@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dlt0j2da28fch"]
+[gd_scene load_steps=26 format=3 uid="uid://dlt0j2da28fch"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_iuuvd"]
 [ext_resource type="Texture2D" uid="uid://cb1dyrcsti5xj" path="res://assets/sprites/mainmenu/TITLE_bg.png" id="2_6ugmj"]
@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cjlkhnnkjoia2" path="res://assets/sprites/mainmenu/start_hover.png" id="3_p3hbw"]
 [ext_resource type="Texture2D" uid="uid://dbi3sqsacoir4" path="res://assets/sprites/mainmenu/start_click.png" id="4_1ar28"]
 [ext_resource type="Texture2D" uid="uid://blfmjutlcwvm1" path="res://assets/sprites/mainmenu/credits_idle.png" id="4_3lcky"]
+[ext_resource type="VideoStream" path="res://assets/cutscene/roachcut_noqoute.ogv" id="4_qhikk"]
 [ext_resource type="Texture2D" uid="uid://bjy8v1j2b4ray" path="res://assets/sprites/mainmenu/quit_hover.png" id="7_xhybr"]
 [ext_resource type="Texture2D" uid="uid://cu1andxmlgob1" path="res://assets/sprites/mainmenu/quit_click.png" id="8_jo40n"]
 [ext_resource type="Texture2D" uid="uid://32dbq4vttvy2" path="res://assets/sprites/mainmenu/credits_hover.png" id="11_skt0k"]
 [ext_resource type="Texture2D" uid="uid://du31wa1st8s6h" path="res://assets/sprites/mainmenu/credits_click.png" id="12_hijwl"]
+[ext_resource type="Texture2D" uid="uid://nik8nh4viilh" path="res://assets/misc/11301-200.png" id="14_p0h6d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3aah"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -48,6 +50,9 @@ texture = ExtResource("11_skt0k")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dcmf"]
 texture = ExtResource("12_hijwl")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4amg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -58,21 +63,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iuuvd")
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 240.0
-offset_bottom = 135.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_6ugmj")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -90,6 +80,21 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q3aah")
 metadata/_edit_lock_ = true
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6ugmj")
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -105,6 +110,22 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ga17x")
 expand_mode = 1
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_qhikk")
+expand = true
 
 [node name="play" type="Button" parent="."]
 layout_mode = 1
@@ -159,5 +180,39 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_u5bbs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yipvy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5dcmf")
 
+[node name="skip" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 145.0
+offset_top = 105.0
+offset_right = 230.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4amg")
+text = "Skip    "
+
+[node name="TextureRect" type="TextureRect" parent="skip"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -7.0
+offset_right = -14.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_p0h6d")
+expand_mode = 1
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]
