@@ -85,6 +85,7 @@
 [ext_resource type="Texture2D" uid="uid://bqu80rxh5ccca" path="res://assets/sprites/arrows/arrows0057.png" id="58_olr5p"]
 [ext_resource type="Texture2D" uid="uid://c8x1rg5x0efg" path="res://assets/sprites/arrows/arrows0058.png" id="59_37g0y"]
 [ext_resource type="Texture2D" uid="uid://jylj1c0mrffk" path="res://assets/sprites/arrows/arrows0059.png" id="60_27wqy"]
+[ext_resource type="Texture2D" uid="uid://dwihyvxfys8nt" path="res://assets/sprites/death/deathscreen.png" id="86_nu8ds"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkjeh"]
 bg_color = Color(1, 1, 1, 0)
@@ -365,10 +366,6 @@ bg_color = Color(0.721569, 0.721569, 0.721569, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxhp7"]
 bg_color = Color(0.141176, 0.0823529, 0.0862745, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_8q0bh"]
-font_size = 36
-font_color = Color(0.756863, 0.14902, 0.0666667, 1)
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -447,23 +444,16 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gg7xi")
 theme_override_styles/hover = SubResource("StyleBoxFlat_sxhp7")
 text = "Retry"
 
-[node name="u died" type="Label" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -51.0
-offset_right = 99.0
-offset_bottom = -17.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "YOU DIED"
-label_settings = SubResource("LabelSettings_8q0bh")
-horizontal_alignment = 1
-vertical_alignment = 1
+anchors_preset = -1
+anchor_right = 1.002
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 0.0399475
+offset_bottom = -1.0
+texture = ExtResource("86_nu8ds")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
