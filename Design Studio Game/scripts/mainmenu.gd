@@ -5,18 +5,22 @@ extends Control
 @onready var quit = $quit
 @onready var credits = $credits
 @onready var skip = $skip
+@onready var back = $back
+
 
 func _ready():
 	skip.visible=false
 	skip.modulate.a=0
+	back.visible=false
 	
 func _process(delta):
 	pass
 
 func _on_play_pressed():
-	_hidebutton()
+	_buttonvisiblity(false)
 	skip.visible=true
 	skip.modulate.a=0.8
+	back.visible=false
 	_cutscene.play()
 	
 
@@ -30,11 +34,16 @@ func _on_video_stream_player_finished():
 func _on_skip_pressed():
 	get_tree().change_scene_to_file("res://scenes/bathfloor1.tscn")
 	
-func _hidebutton():
-	play.visible=false
-	quit.visible=false
-	credits.visible=false
+func _buttonvisiblity(val:bool):
+	play.visible=val
+	quit.visible=val
+	credits.visible=val
 
 
 func _on_credits_pressed():
-	_hidebutton()
+	_buttonvisiblity(false)
+	back.visible=true
+
+func _on_back_pressed():
+	_buttonvisiblity(true)
+	back.visible=false

@@ -80,7 +80,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q3aah")
 metadata/_edit_lock_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="bg" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -95,7 +95,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_6ugmj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -180,6 +180,21 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_u5bbs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yipvy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5dcmf")
 
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = 82.0
+offset_right = 44.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+
 [node name="skip" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -216,4 +231,5 @@ expand_mode = 1
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]

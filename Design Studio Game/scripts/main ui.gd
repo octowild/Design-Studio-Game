@@ -5,7 +5,8 @@ extends Control
 @onready var _timer = $Timer
 @onready var _bg = $Panel/Panel
 @onready var retry = $Panel/retry
-@onready var ded = $"Panel/u died"
+@onready var _return = $Panel/return
+@onready var deathscreen = $Panel/TextureRect
 
 @export var _mc:CharacterBody2D
 
@@ -17,7 +18,9 @@ func _ready():
 	_bg.modulate=Color(0,0,0,0)
 	retry.disabled=true
 	retry.modulate=Color(1,1,1,0)
-	ded.modulate=Color(1,1,1,0)
+	_return.disabled=true
+	_return.modulate=Color(1,1,1,0)
+	deathscreen.modulate=Color(0,0,0,0)
 	if get_tree().current_scene.name=="bathfloor1":
 		_setopacity()
 
@@ -25,10 +28,11 @@ func _process(delta):
 	if get_tree().current_scene.name=="bathfloor1":
 		_tutorial()
 	if _mc._isded==true:
-		_bg.modulate=lerp(_bg.modulate,Color(1,0,0,0.9),0.05)
+		deathscreen.modulate=lerp(deathscreen.modulate,Color(1,0,0,0.9),0.05)
 		retry.disabled=false
 		retry.modulate=Color(1,1,1,1)
-		ded.modulate=Color(1,1,1,1)
+		_return.disabled=false
+		_return.modulate=Color(1,1,1,1)
 		fade=true
 	
 
@@ -65,4 +69,7 @@ func _on_retry_pressed():
 func _on_exit_body_entered(body):
 	if body.name=="WhiteMCRoach":
 		_bg.modulate=Color(0,0,0,1)
-		print("EEEE")
+		print("ee")
+
+func _on_return_pressed():
+	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
