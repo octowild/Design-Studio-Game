@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8id0n7yqffoj"
-path="res://.godot/imported/titlescreen_concept.png-4fb107e170e4a6eefa17692faec956f2.ctex"
+uid="uid://okhagtivcoym"
+path="res://.godot/imported/game_end.png-ae0005f26b922159b04d7e0b21740e45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mainmenu/titlescreen_concept.png"
-dest_files=["res://.godot/imported/titlescreen_concept.png-4fb107e170e4a6eefa17692faec956f2.ctex"]
+source_file="res://assets/sprites/mainmenu/game_end.png"
+dest_files=["res://.godot/imported/game_end.png-ae0005f26b922159b04d7e0b21740e45.ctex"]
 
 [params]
 
