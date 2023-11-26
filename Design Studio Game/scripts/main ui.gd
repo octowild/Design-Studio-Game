@@ -71,6 +71,8 @@ func _on_retry_pressed():
 func _on_exit_body_entered(body):
 	if body.name=="WhiteMCRoach":
 		endscreen.modulate=Color(1,1,1,1)
+		_return.disabled=false
+		_return.modulate=Color(1,1,1,1)
 		_mc._movelock=true
 		print("ee")
 

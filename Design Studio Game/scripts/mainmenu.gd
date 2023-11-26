@@ -6,12 +6,15 @@ extends Control
 @onready var credits = $credits
 @onready var skip = $skip
 @onready var back = $back
+@onready var title = $Title
+@onready var creditscontent = $creditscontent
 
 
 func _ready():
 	skip.visible=false
 	skip.modulate.a=0
 	back.visible=false
+	creditscontent.visible=false
 	
 func _process(delta):
 	pass
@@ -43,7 +46,11 @@ func _buttonvisiblity(val:bool):
 func _on_credits_pressed():
 	_buttonvisiblity(false)
 	back.visible=true
+	title.visible=false
+	creditscontent.visible=true
 
 func _on_back_pressed():
 	_buttonvisiblity(true)
 	back.visible=false
+	title.visible=true
+	creditscontent.visible=false

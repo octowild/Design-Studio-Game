@@ -103,6 +103,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_6ugmj")
 
+[node name="creditscontent" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -94.0
+offset_right = 102.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Butr Chikn Man
+Dnr
+Octowild
+HrishikeshCool"
+horizontal_alignment = 1
+
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
