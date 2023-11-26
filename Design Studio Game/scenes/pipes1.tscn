@@ -98,8 +98,16 @@ sprite_frames = SubResource("SpriteFrames_qtfox")
 animation = &"graining"
 autoplay = "graining"
 
-[node name="Control" parent="WhiteMCRoach/Camera2D" node_paths=PackedStringArray("_mc") instance=ExtResource("2_bmyjk")]
-_mc = NodePath("../..")
+[node name="CanvasLayer" type="CanvasLayer" parent="WhiteMCRoach/Camera2D"]
+
+[node name="Control" parent="WhiteMCRoach/Camera2D/CanvasLayer" node_paths=PackedStringArray("_mc") instance=ExtResource("2_bmyjk")]
+z_index = 101
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+_mc = NodePath("../../..")
 
 [node name="PointLight2D" type="PointLight2D" parent="WhiteMCRoach"]
 scale = Vector2(0.94, 0.94)
@@ -210,4 +218,4 @@ script = ExtResource("14_txyl1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
 shape = SubResource("RectangleShape2D_hqiy8")
 
-[connection signal="body_entered" from="exit" to="WhiteMCRoach/Camera2D/Control" method="_on_exit_body_entered"]
+[connection signal="body_entered" from="exit" to="WhiteMCRoach/Camera2D/CanvasLayer/Control" method="_on_exit_body_entered"]

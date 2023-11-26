@@ -8,7 +8,7 @@ func _ready():
 func _process(delta):
 	_curscn=get_tree().current_scene.name
 	if _curscn=="bathfloor1":
-		if Backgroundmusic.stream != load("res://objects/Goliath_trimmed.mp3"):
+		if Backgroundmusic.stream != load("res://objects/Goliath_trimmed.mp3")||!Backgroundmusic.playing:
 			Backgroundmusic.stop()
 			Backgroundmusic.stream = load("res://objects/Goliath_trimmed.mp3")
 			Backgroundmusic.play()

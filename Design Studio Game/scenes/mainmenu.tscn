@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlt0j2da28fch"]
+[gd_scene load_steps=30 format=3 uid="uid://dlt0j2da28fch"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_iuuvd"]
 [ext_resource type="Texture2D" uid="uid://cb1dyrcsti5xj" path="res://assets/sprites/mainmenu/TITLE_bg.png" id="2_6ugmj"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cu1andxmlgob1" path="res://assets/sprites/mainmenu/quit_click.png" id="8_jo40n"]
 [ext_resource type="Texture2D" uid="uid://32dbq4vttvy2" path="res://assets/sprites/mainmenu/credits_hover.png" id="11_skt0k"]
 [ext_resource type="Texture2D" uid="uid://du31wa1st8s6h" path="res://assets/sprites/mainmenu/credits_click.png" id="12_hijwl"]
-[ext_resource type="Texture2D" uid="uid://nik8nh4viilh" path="res://assets/misc/11301-200.png" id="14_p0h6d"]
+[ext_resource type="Texture2D" uid="uid://bu5id7jvquv2o" path="res://assets/sprites/mainmenu/skip_idle.png" id="14_qb8ek"]
+[ext_resource type="Texture2D" uid="uid://doa7ycip3olaa" path="res://assets/sprites/mainmenu/skip_hover.png" id="15_gf56g"]
+[ext_resource type="Texture2D" uid="uid://chxjrdii0io8i" path="res://assets/sprites/mainmenu/skip_click.png" id="16_h5v0o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3aah"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -50,8 +52,14 @@ texture = ExtResource("11_skt0k")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dcmf"]
 texture = ExtResource("12_hijwl")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4amg"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uqyg6"]
+texture = ExtResource("14_qb8ek")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3q4r8"]
+texture = ExtResource("15_gf56g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q24bj"]
+texture = ExtResource("16_h5v0o")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -118,10 +126,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -238.0
+offset_left = -240.0
 offset_top = -135.0
 offset_right = 240.0
-offset_bottom = 136.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("4_qhikk")
@@ -208,24 +216,9 @@ offset_right = 230.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_m4amg")
-text = "Skip    "
-
-[node name="TextureRect" type="TextureRect" parent="skip"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -7.0
-offset_right = -14.0
-offset_bottom = 9.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("14_p0h6d")
-expand_mode = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_uqyg6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3q4r8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q24bj")
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]

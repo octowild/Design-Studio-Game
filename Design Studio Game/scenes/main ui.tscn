@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dwa56kj00m1lh"]
+[gd_scene load_steps=96 format=3 uid="uid://dwa56kj00m1lh"]
 
 [ext_resource type="Texture2D" uid="uid://ca2vbx2m4ylp3" path="res://assets/sprites/shift/shift0000.png" id="1_boen2"]
 [ext_resource type="Texture2D" uid="uid://jx8801dhng4u" path="res://assets/sprites/arrows/arrows0000.png" id="1_isexs"]
@@ -86,6 +86,10 @@
 [ext_resource type="Texture2D" uid="uid://c8x1rg5x0efg" path="res://assets/sprites/arrows/arrows0058.png" id="59_37g0y"]
 [ext_resource type="Texture2D" uid="uid://jylj1c0mrffk" path="res://assets/sprites/arrows/arrows0059.png" id="60_27wqy"]
 [ext_resource type="Texture2D" uid="uid://dwihyvxfys8nt" path="res://assets/sprites/death/deathscreen.png" id="86_nu8ds"]
+[ext_resource type="Texture2D" uid="uid://8slvnm58xn6q" path="res://assets/sprites/death/retry_idle.png" id="87_347fr"]
+[ext_resource type="Texture2D" uid="uid://b3nrhydts6yd7" path="res://assets/sprites/death/retry_hover.png" id="88_w66sw"]
+[ext_resource type="Texture2D" uid="uid://c42130ydm0w4y" path="res://assets/sprites/death/retry_click.png" id="89_a6rrq"]
+[ext_resource type="Texture2D" uid="uid://okhagtivcoym" path="res://assets/sprites/mainmenu/game_end.png" id="90_165ak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkjeh"]
 bg_color = Color(1, 1, 1, 0)
@@ -360,11 +364,14 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gg7xi"]
-bg_color = Color(0.721569, 0.721569, 0.721569, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhq7q"]
+texture = ExtResource("87_347fr")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxhp7"]
-bg_color = Color(0.141176, 0.0823529, 0.0862745, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyphw"]
+texture = ExtResource("88_w66sw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4b662"]
+texture = ExtResource("89_a6rrq")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -426,7 +433,22 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="endscreen" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -136.0
+offset_right = 241.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("90_165ak")
+
+[node name="deathscreen" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.002
@@ -444,16 +466,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = 34.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -34.0
+offset_top = 37.0
+offset_right = 34.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_gg7xi")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sxhp7")
-text = "Retry"
+theme_override_styles/normal = SubResource("StyleBoxTexture_rhq7q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qyphw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4b662")
 
 [node name="return" type="Button" parent="Panel"]
 layout_mode = 1

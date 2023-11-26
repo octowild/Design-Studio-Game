@@ -6,7 +6,8 @@ extends Control
 @onready var _bg = $Panel/Panel
 @onready var retry = $Panel/retry
 @onready var _return = $Panel/return
-@onready var deathscreen = $Panel/TextureRect
+@onready var deathscreen = $Panel/deathscreen
+@onready var endscreen = $Panel/endscreen
 
 @export var _mc:CharacterBody2D
 
@@ -21,6 +22,7 @@ func _ready():
 	_return.disabled=true
 	_return.modulate=Color(1,1,1,0)
 	deathscreen.modulate=Color(0,0,0,0)
+	endscreen.modulate=Color(0,0,0,0)
 	if get_tree().current_scene.name=="bathfloor1":
 		_setopacity()
 
@@ -28,7 +30,7 @@ func _process(delta):
 	if get_tree().current_scene.name=="bathfloor1":
 		_tutorial()
 	if _mc._isded==true:
-		deathscreen.modulate=lerp(deathscreen.modulate,Color(1,0,0,0.9),0.05)
+		deathscreen.modulate=lerp(deathscreen.modulate,Color(1,1,1,0.9),0.05)
 		retry.disabled=false
 		retry.modulate=Color(1,1,1,1)
 		_return.disabled=false
@@ -68,7 +70,8 @@ func _on_retry_pressed():
 
 func _on_exit_body_entered(body):
 	if body.name=="WhiteMCRoach":
-		_bg.modulate=Color(0,0,0,1)
+		endscreen.modulate=Color(1,1,1,1)
+		_mc._movelock=true
 		print("ee")
 
 func _on_return_pressed():
