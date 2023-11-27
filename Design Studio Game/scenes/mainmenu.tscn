@@ -1,13 +1,15 @@
-[gd_scene load_steps=36 format=3 uid="uid://dlt0j2da28fch"]
+[gd_scene load_steps=38 format=3 uid="uid://dlt0j2da28fch"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_iuuvd"]
 [ext_resource type="Texture2D" uid="uid://cb1dyrcsti5xj" path="res://assets/sprites/mainmenu/TITLE_bg.png" id="2_6ugmj"]
 [ext_resource type="Texture2D" uid="uid://f8q1xrw1n1qy" path="res://assets/sprites/mainmenu/start_idle.png" id="2_eq4k1"]
 [ext_resource type="Texture2D" uid="uid://cnb4j1hyu2uh" path="res://assets/sprites/mainmenu/TITLE_transparent.png" id="2_ga17x"]
+[ext_resource type="Texture2D" uid="uid://vnqyygmb7jdx" path="res://assets/sprites/mainmenu/credits_bg - Copy.png" id="3_3afe1"]
 [ext_resource type="Texture2D" uid="uid://di31imqe8gsmt" path="res://assets/sprites/mainmenu/quit_idle.png" id="3_6oxtg"]
 [ext_resource type="Texture2D" uid="uid://cjlkhnnkjoia2" path="res://assets/sprites/mainmenu/start_hover.png" id="3_p3hbw"]
 [ext_resource type="Texture2D" uid="uid://dbi3sqsacoir4" path="res://assets/sprites/mainmenu/start_click.png" id="4_1ar28"]
 [ext_resource type="Texture2D" uid="uid://blfmjutlcwvm1" path="res://assets/sprites/mainmenu/credits_idle.png" id="4_3lcky"]
+[ext_resource type="Texture2D" uid="uid://dsupmftf2c64p" path="res://assets/sprites/mainmenu/credits_text - Copy.png" id="4_cu0iq"]
 [ext_resource type="VideoStream" path="res://assets/cutscene/roachcut_noqoute.ogv" id="4_qhikk"]
 [ext_resource type="Texture2D" uid="uid://bjy8v1j2b4ray" path="res://assets/sprites/mainmenu/quit_hover.png" id="7_xhybr"]
 [ext_resource type="Texture2D" uid="uid://cu1andxmlgob1" path="res://assets/sprites/mainmenu/quit_click.png" id="8_jo40n"]
@@ -115,24 +117,35 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_6ugmj")
 
-[node name="creditscontent" type="Label" parent="."]
+[node name="creditscontent" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.0
-offset_top = -94.0
-offset_right = 102.0
-offset_bottom = 48.0
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Butr Chikn Man
-Dnr
-Octowild
-HrishikeshCool"
-horizontal_alignment = 1
+texture = ExtResource("3_3afe1")
+
+[node name="creditstxt" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -111.0
+offset_right = 120.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_cu0iq")
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
@@ -227,9 +240,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -61.0
-offset_top = 84.0
+offset_top = 99.0
 offset_right = 61.0
-offset_bottom = 111.0
+offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_y7sjt")

@@ -8,13 +8,14 @@ extends Control
 @onready var back = $back
 @onready var title = $Title
 @onready var creditscontent = $creditscontent
-
+@onready var creditstxt = $creditstxt
 
 func _ready():
 	skip.visible=false
 	skip.modulate.a=0
 	back.visible=false
 	creditscontent.visible=false
+	creditstxt.visible=false
 	
 func _process(delta):
 	pass
@@ -48,9 +49,11 @@ func _on_credits_pressed():
 	back.visible=true
 	title.visible=false
 	creditscontent.visible=true
+	creditstxt.visible=true
 
 func _on_back_pressed():
 	_buttonvisiblity(true)
 	back.visible=false
 	title.visible=true
 	creditscontent.visible=false
+	creditstxt.visible=false
