@@ -94,11 +94,11 @@ radius = 62.0322
 [sub_resource type="CircleShape2D" id="CircleShape2D_4v4ei"]
 radius = 40.1995
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ghy5r"]
-radius = 139.004
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kolx"]
 radius = 78.0064
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy34t"]
+size = Vector2(342, 240)
 
 [node name="bathfloor1" type="Node2D"]
 y_sort_enabled = true
@@ -275,23 +275,15 @@ visibility_layer = 4
 position = Vector2(-588, -71)
 shape = SubResource("CircleShape2D_4v4ei")
 
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="nofootzone"]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(824, -663)
-shape = SubResource("CircleShape2D_ghy5r")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="nofootzone"]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(969, -663)
-shape = SubResource("CircleShape2D_ghy5r")
-
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="nofootzone"]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(1031, -980)
 shape = SubResource("CircleShape2D_7kolx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="nofootzone"]
+position = Vector2(895, -663)
+shape = SubResource("RectangleShape2D_sy34t")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
