@@ -13,7 +13,6 @@ config_version=5
 config/name="Design Studio Game"
 run/main_scene="res://scenes/mainmenu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
 config/windows_native_icon="res://assets/misc/icon.ico"
 
 [autoload]
