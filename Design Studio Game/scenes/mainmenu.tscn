@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dlt0j2da28fch"]
+[gd_scene load_steps=36 format=3 uid="uid://dlt0j2da28fch"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_iuuvd"]
 [ext_resource type="Texture2D" uid="uid://cb1dyrcsti5xj" path="res://assets/sprites/mainmenu/TITLE_bg.png" id="2_6ugmj"]
@@ -14,8 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://32dbq4vttvy2" path="res://assets/sprites/mainmenu/credits_hover.png" id="11_skt0k"]
 [ext_resource type="Texture2D" uid="uid://du31wa1st8s6h" path="res://assets/sprites/mainmenu/credits_click.png" id="12_hijwl"]
 [ext_resource type="Texture2D" uid="uid://bu5id7jvquv2o" path="res://assets/sprites/mainmenu/skip_idle.png" id="14_qb8ek"]
+[ext_resource type="Texture2D" uid="uid://b8tg1xvj8bb6r" path="res://assets/sprites/death/returntotitle_idle.png" id="14_v3kga"]
 [ext_resource type="Texture2D" uid="uid://doa7ycip3olaa" path="res://assets/sprites/mainmenu/skip_hover.png" id="15_gf56g"]
+[ext_resource type="Texture2D" uid="uid://nnqn2axdp16b" path="res://assets/sprites/death/returntotitle_hover.png" id="15_s8ebm"]
 [ext_resource type="Texture2D" uid="uid://chxjrdii0io8i" path="res://assets/sprites/mainmenu/skip_click.png" id="16_h5v0o"]
+[ext_resource type="Texture2D" uid="uid://cxckl1sie2eig" path="res://assets/sprites/death/returntotitle_click.png" id="16_p205q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3aah"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -51,6 +54,15 @@ texture = ExtResource("11_skt0k")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dcmf"]
 texture = ExtResource("12_hijwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7sjt"]
+texture = ExtResource("14_v3kga")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b0kyg"]
+texture = ExtResource("15_s8ebm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hv53s"]
+texture = ExtResource("16_p205q")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uqyg6"]
 texture = ExtResource("14_qb8ek")
@@ -214,13 +226,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = 82.0
-offset_right = 44.0
-offset_bottom = 113.0
+offset_left = -61.0
+offset_top = 84.0
+offset_right = 61.0
+offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Back"
+theme_override_styles/normal = SubResource("StyleBoxTexture_y7sjt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b0kyg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hv53s")
 
 [node name="skip" type="Button" parent="."]
 layout_mode = 1
