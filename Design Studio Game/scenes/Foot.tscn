@@ -57,6 +57,12 @@ shape = SubResource("CircleShape2D_ks85f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_n27hv")
 
+[node name="beggingcd" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="Foot/kill" to="." method="_on_kill_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="trig" to="." method="_on_trig_body_entered"]
+[connection signal="timeout" from="beggingcd" to="." method="_on_beggingcd_timeout"]

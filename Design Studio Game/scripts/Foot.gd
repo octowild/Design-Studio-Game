@@ -10,15 +10,17 @@ extends CharacterBody2D
 var _stamp:bool=false
 var _contact:bool=false
 var _mcpos
+var _spawntime=true
 
 
 @onready var shadow=$Shadow
 @onready var foot=$Foot
 @onready var _timer=$Timer
 @onready var _col=$Foot/kill/CollisionShape2D
+@onready var beggingcd = $beggingcd
 
 func _physics_process(delta):
-	if (!_stamp&&!_mc._insafezone):
+	if (!_stamp&&!_mc._insafezone&&!_spawntime):
 		_mcpos=_mc.position
 		position=lerp(position,_mcpos,_movespeed/75)
 		if(foot.position.y>=-500):
@@ -49,3 +51,7 @@ func _on_kill_body_entered(body):
 	if(body.name=="WhiteMCRoach"):
 		_mc._isded=true
 		
+
+
+func _on_beggingcd_timeout():
+	_spawntime=false

@@ -157,7 +157,7 @@ texture = ExtResource("2_riflt")
 texture_scale = 4.6
 
 [node name="Foot" parent="." node_paths=PackedStringArray("_mc") instance=ExtResource("15_wrbsl")]
-position = Vector2(-1151, -890)
+position = Vector2(-1200, -1118)
 _mc = NodePath("../WhiteMCRoach")
 
 [node name="WhiteMCRoach" parent="." instance=ExtResource("1_fc02e")]
@@ -211,12 +211,6 @@ collision_mask = 4
 light_mask = 4
 visibility_layer = 4
 position = Vector2(-610, -1133)
-shape = SubResource("CircleShape2D_311g5")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="nofootzone"]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(-907, -872)
 shape = SubResource("CircleShape2D_311g5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="nofootzone"]
