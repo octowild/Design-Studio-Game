@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dlt0j2da28fch"]
+[gd_scene load_steps=42 format=3 uid="uid://dlt0j2da28fch"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_iuuvd"]
 [ext_resource type="Texture2D" uid="uid://cb1dyrcsti5xj" path="res://assets/sprites/mainmenu/TITLE_bg.png" id="2_6ugmj"]
@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://dbi3sqsacoir4" path="res://assets/sprites/mainmenu/start_click.png" id="4_1ar28"]
 [ext_resource type="Texture2D" uid="uid://blfmjutlcwvm1" path="res://assets/sprites/mainmenu/credits_idle.png" id="4_3lcky"]
 [ext_resource type="Texture2D" uid="uid://dsupmftf2c64p" path="res://assets/sprites/mainmenu/credits_text - Copy.png" id="4_cu0iq"]
+[ext_resource type="Texture2D" uid="uid://bbf0mbv0r5yab" path="res://assets/sprites/mainmenu/sidak.png" id="4_fv32h"]
 [ext_resource type="VideoStream" path="res://assets/cutscene/roachcut_noqoute.ogv" id="4_qhikk"]
+[ext_resource type="Texture2D" uid="uid://c6ho1gn076cik" path="res://assets/sprites/mainmenu/hrishshikesh.png" id="5_38k66"]
+[ext_resource type="Texture2D" uid="uid://dqxlvoanb6ldg" path="res://assets/sprites/mainmenu/dev.png" id="6_pu4aw"]
+[ext_resource type="Texture2D" uid="uid://bxoxfun672nl0" path="res://assets/sprites/mainmenu/kaustubh.png" id="7_wymtr"]
 [ext_resource type="Texture2D" uid="uid://bjy8v1j2b4ray" path="res://assets/sprites/mainmenu/quit_hover.png" id="7_xhybr"]
 [ext_resource type="Texture2D" uid="uid://cu1andxmlgob1" path="res://assets/sprites/mainmenu/quit_click.png" id="8_jo40n"]
 [ext_resource type="Texture2D" uid="uid://32dbq4vttvy2" path="res://assets/sprites/mainmenu/credits_hover.png" id="11_skt0k"]
@@ -131,6 +135,66 @@ offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_3afe1")
+
+[node name="sidak" type="TextureRect" parent="creditscontent"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -217.0
+offset_top = -116.0
+offset_right = -187.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_fv32h")
+expand_mode = 1
+
+[node name="hrishikesh" type="TextureRect" parent="creditscontent"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -102.0
+offset_right = -141.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_38k66")
+expand_mode = 1
+
+[node name="dev" type="TextureRect" parent="creditscontent"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 187.0
+offset_top = -116.0
+offset_right = 216.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_pu4aw")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="creditscontent"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = -111.0
+offset_right = 172.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_wymtr")
+expand_mode = 1
 
 [node name="creditstxt" type="TextureRect" parent="."]
 layout_mode = 1
